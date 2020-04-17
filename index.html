@@ -7,46 +7,53 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section id="yellow-case">
-        <section id="screen-section">
-            <div id="border-screen">
-                <div id="power-container">
-                    <div id="red-led"></div>
-                    <h4>power</h4>
+    <header>
+        <h1>Game Boy Color</h1>
+        <p>Réalisé avec CSS et JavaScript</p>
+    </header>
+
+    <section id="game-boy">
+        <section id="yellow-case">
+            <section id="screen-section">
+                <div id="border-screen">
+                    <canvas id="screen"></canvas>
+                    <div id="title-gameboy">
+                        <h1>game boy <span>color</span></h1>
+                    </div>
+                    <div id="power-container">
+                        <div id="red-led"></div>
+                        <h4>power</h4>
+                    </div>
                 </div>
-                <canvas id="screen"></canvas>
-                <div id="title-gameboy">
-                    <h1>game boy <span>color</span></h1>
+            </section>
+            <section id="button-section">
+                <div id="nintendo">
+                    <h2>Nintendo</h2>
                 </div>
-            </div>
-        </section>
-        <section id="button-section">
-            <div id="nintendo">
-                <h2>Nintendo</h2>
-            </div>
-            <div id="button-container">
-                <div id="button-arrows">
-                    <div id="arrows-top"></div>
-                    <div id="arrows-left"></div>
-                    <div id="arrow-center"></div>
-                    <div id="arrows-right"></div>
-                    <div id="arrows-bottom"></div>
+                <div id="button-container">
+                    <div id="button-arrows">
+                        <div id="arrows-top"></div>
+                        <div id="arrows-left"></div>
+                        <div id="arrow-center"></div>
+                        <div id="arrows-right"></div>
+                        <div id="arrows-bottom"></div>
+                    </div>
+                    <div id="button-A-B-container">
+                        <div id="button-B">B</div>
+                        <div id="button-A">A</div>
+                    </div>
                 </div>
-                <div id="button-A-B-container">
-                    <div id="button-B">B</div>
-                    <div id="button-A">A</div>
+                <div id="button-select-start-container">
+                    <div>
+                        <div class="button-select-start"></div>
+                        <h3>select</h3>
+                    </div>
+                    <div>
+                        <div class="button-select-start"></div>
+                        <h3>start</h3>
+                    </div>
                 </div>
-            </div>
-            <div id="button-select-start-container">
-                <div>
-                    <div class="button-select-start"></div>
-                    <h3>select</h3>
-                </div>
-                <div>
-                    <div class="button-select-start"></div>
-                    <h3>start</h3>
-                </div>
-            </div>
+            </section>
         </section>
     </section>
 </body>
