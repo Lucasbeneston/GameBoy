@@ -1,0 +1,207 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    padding-top: 5vh;
+    font-family: sans-serif;
+}
+
+/***** YELLOW CASE SECTION *****/
+#yellow-case{
+height: 90vh;
+width: 50vh;
+background-color: #f1d631;
+border-radius: 20px;
+}
+
+/****  SCREEN SECTION ****/
+#screen-section{
+    height: 45vh;
+    padding: 2.5vh;
+}
+
+#border-screen{
+    background-color:#222632;
+    height: 40vh;
+    padding-top: 4vh;
+    padding-left: 7.5vh;
+    border-radius: 20px;
+}
+
+#title-gameboy{
+    display: flex;
+    width: 29vh;
+    height: 6.5vh;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    font-size: 2.75vh;
+    color: #63768e;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+h1 span{
+    font-style: normal;
+}
+
+/*** SCREEN - CANVAS ***/
+canvas{
+    height: 29vh;
+    width: 29vh;
+    background-color: #6d767d;
+}
+
+
+/****  BUTTON SECTION ****/
+#button-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 45vh;
+    /* background-color: rgb(113, 143, 53); */
+}
+
+#nintendo{
+    /* background-color: teal; */
+    width: 15vh;
+    font-size: 1.5vh;
+}
+
+#nintendo h2{
+    display: block;
+    text-align: center;
+    color: #d6b520;
+    border: 3px solid #d6b520;
+    border-radius: 20px;
+}
+
+/*** ARROWS BUTTON ***/
+#button-container{
+    display: flex;
+    padding: 0 5vh;
+    justify-content: space-between;
+    width: 50vh;
+    height: 15vh;
+    /* background-color: tomato; */
+}
+
+/**  BUTTON LEFT ARROWS **/
+#button-arrows{
+    height: 15vh;
+    width: 15vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    /* background-color: teal; */
+}
+
+#arrows-top{
+    grid-row: 1/2;
+    grid-column: 2/3;
+    background-color: #383c4c;
+    border-radius: 7.5px 7.5px 0px 0px;
+    box-shadow: 4px -2px 2px 0px rgba(0,0,0,0.90);
+    cursor: pointer;
+    z-index: 98;
+}
+
+#arrows-left{
+    grid-row: 2/3;
+    grid-column: 1/2;
+    background-color: #383c4c;
+    border-radius: 7.5px 0px 0px 7.5px;
+    box-shadow: 4px -7px 2px -3px rgba(0,0,0,0.90);
+    cursor: pointer;
+}
+
+#arrow-center{
+    grid-row: 2/3;
+    grid-column: 2/3;
+    background-color: #383c4c;
+    z-index: 99;
+}
+
+#arrows-right{
+    grid-row: 2/3;
+    grid-column: 3/4;
+    background-color: #383c4c;
+    border-radius: 0px 7.5px 7.5px 0px;
+    box-shadow: 0px 0px 2px 4px rgba(0,0,0,0.90);
+    cursor: pointer;
+}
+
+#arrows-bottom{
+    grid-row: 3/4;
+    grid-column: 2/3;
+    background-color: #383c4c;
+    border-radius: 0px 0px 7.5px 7.5px;
+    box-shadow: 6px -1px 2px -2px rgba(0,0,0,0.90);
+    cursor: pointer;
+}
+
+/**  BUTTON RIGHT A AND B **/
+#button-A-B-container{
+    display: flex;
+    justify-content: space-between;
+    height: 15vh;
+    width: 15vh;
+    font-size: 4vh;
+    color: #29292b;
+    /* background-color: teal; */
+}
+
+#button-A{
+    height: 6vh;
+    width: 6vh;
+    background-color: #383c4c;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3vh;
+    box-shadow: 0px 0px 2px 3px rgba(0,0,0,0.90);
+    cursor: pointer;
+}
+
+#button-B{
+    height: 6vh;
+    width: 6vh;
+    background-color: #383c4c;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6vh;
+    box-shadow: 0px 0px 2px 3px rgba(0,0,0,0.90);
+    cursor: pointer;
+}
+
+/* SELECT - START */
+#button-select-start-container{
+    display: flex;
+    justify-content: space-evenly;
+    width: 20vh;
+    /* background-color: teal; */
+    text-align: center;
+    color: #d6b520;
+    font-size: 1.5vh;
+}
+
+.button-select-start{
+    height: 1.5vh;
+    width: 5vh;
+    border-radius: 10px;
+    background-color: #383c4c;
+    box-shadow: 0px 0px 2px 3px rgba(0,0,0,0.90);
+    margin-bottom: 1vh;
+    cursor: pointer;
+}
