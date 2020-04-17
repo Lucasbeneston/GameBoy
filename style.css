@@ -17,6 +17,7 @@ height: 90vh;
 width: 50vh;
 background-color: #f1d631;
 border-radius: 20px;
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.25);
 }
 
 /****  SCREEN SECTION ****/
@@ -28,9 +29,30 @@ border-radius: 20px;
 #border-screen{
     background-color:#222632;
     height: 40vh;
-    padding-top: 4vh;
-    padding-left: 7.5vh;
+    padding-top: 4vh;;
     border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+#power-container{
+    position: absolute;
+    left: 0;
+    margin: 5vh 1.5vh;
+    max-width: 6vh;
+    text-transform: uppercase;
+    font-size: 1.2vh;
+    color: #3e4957;
+}
+
+#red-led{
+    height: 1.5vh;
+    width: 1.5vh;
+    border-radius: 20px;
+    background-color: #440000;
+    margin: 1vh 0;
 }
 
 #title-gameboy{
