@@ -372,6 +372,15 @@ canvas{
     transition: var(--transition);
 }
 
+#rondoudou-image{
+    height: 10vh;
+    position: absolute;
+    bottom: 4vh;
+    right: 0vh;
+    display: none;
+    transition: var(--transition);
+}
+
 
 /* SELECT - START */
 #button-select-start-section{

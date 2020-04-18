@@ -62,6 +62,7 @@
                 <div id="border-screen">
                     <img id="pikachu-image" src="pikachu.png" alt="Une photo de Pikachu">
                     <img id="togepi-image" src="togepi.png" alt="Une photo de Togepi">
+                    <img id="rondoudou-image" src="rondoudou.png" alt="Une photo de Rondoudou">
                     <canvas id="screen"></canvas>
                     <div id="title-gameboy">
                         <h1>game boy</h1>
@@ -124,6 +125,7 @@
         let startSelect = document.querySelector('#button-select-start-section');
         let pikachu = document.getElementById('pikachu-image');
         let togepi = document.getElementById('togepi-image');
+        let rondoudou = document.getElementById('rondoudou-image')
         let pokemonLogo = document.getElementById('pokemon-logo');
         let buttonA = document.getElementById('button-A');
         let buttonB = document.getElementById('button-B');
@@ -154,6 +156,7 @@
             startSelect.style.color = "#d6b520";
             pikachu.style.display = "";
             togepi.style.display = "";
+            rondoudou.style.display = "";
             pokemonLogo.style.display = "";
             buttonA.style.backgroundColor = "";
             buttonA.style.color = "";
@@ -172,6 +175,7 @@
             startSelect.style.color = "#b91846";
             pikachu.style.display = "";
             togepi.style.display = "";
+            rondoudou.style.display = "";
             pokemonLogo.style.display = "";
             buttonA.style.backgroundColor = "";
             buttonA.style.color = "";
@@ -190,6 +194,7 @@
             startSelect.style.color = "#69942e";
             pikachu.style.display = "";
             togepi.style.display = "";
+            rondoudou.style.display = "";
             pokemonLogo.style.display = "";
             buttonA.style.backgroundColor = "";
             buttonA.style.color = "";
@@ -208,6 +213,7 @@
             startSelect.style.color = "#4b247e";
             pikachu.style.display = "";
             togepi.style.display = "";
+            rondoudou.style.display = "";
             pokemonLogo.style.display = "";
             buttonA.style.backgroundColor = "";
             buttonA.style.color = "";
@@ -226,6 +232,7 @@
             startSelect.style.color = "#0f6070";
             pikachu.style.display = "";
             togepi.style.display = "";
+            rondoudou.style.display = "";
             pokemonLogo.style.display = "";
             buttonA.style.backgroundColor = "";
             buttonA.style.color = "";
@@ -236,7 +243,7 @@
             }
         };
 
-        // Fonction changeToYellow
+        // Fonction changeToPokemon
         function changeToPokemon(){
             gameboyCase.style.backgroundColor = "#f1d631";
             nintendo.style.color = "#d6b520";
@@ -244,6 +251,7 @@
             startSelect.style.color = "#d6b520";
             pikachu.style.display = "block";
             togepi.style.display = "block";
+            rondoudou.style.display = "block";
             pokemonLogo.style.display = "block";
             buttonA.style.backgroundColor = "#e42f36";
             buttonA.style.color = "#c51c26";
