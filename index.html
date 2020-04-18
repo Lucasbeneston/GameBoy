@@ -39,6 +39,12 @@
                     <button class="color-button" id="button-blue"></button>
                     <h3>Blue edition (1998)</h3>
                 </div>
+                <div class="color-button-containers">
+                    <button class="color-button" id="button-pokemon">
+                        <img id="pokeball-button" src="Pokeball.png" alt="">
+                    </button>
+                    <h3>Pokemon edition (1998)</h3>
+                </div>
             </section>
 
             <section id="on-off-section">
@@ -54,9 +60,11 @@
         <section id="yellow-case">
             <section id="screen-section">
                 <div id="border-screen">
+                    <img id="pikachu-image" src="pikachu.png" alt="">
                     <canvas id="screen"></canvas>
                     <div id="title-gameboy">
-                        <h1>game boy <span>color</span></h1>
+                        <h1>game boy</h1>
+                        <img src="Game_Boy_Color_logo.png" alt="La partie Color du logo de la Game Boy Color">
                     </div>
                     <div id="power-container">
                         <div id="red-led"></div>
@@ -71,23 +79,34 @@
                 </div>
                 <div id="button-container">
                     <div id="button-arrows">
-                        <div id="arrows-top"></div>
-                        <div id="arrows-left"></div>
-                        <div id="arrow-center"></div>
-                        <div id="arrows-right"></div>
-                        <div id="arrows-bottom"></div>
+                        <div id="arrows-top">
+                            <div id="triangle-top"></div>
+                        </div>
+                        <div id="arrows-left">
+                            <div id="triangle-left"></div>
+                        </div>
+                        <div id="arrow-center">
+                            <div id="circle-center"></div>
+                        </div>
+                        <div id="arrows-right">
+                            <div id="triangle-right"></div>
+                        </div>
+                        <div id="arrows-bottom">
+                            <div id="triangle-bottom"></div>
+                        </div>
                     </div>
                     <div id="button-A-B-container">
                         <div id="button-B">B</div>
                         <div id="button-A">A</div>
                     </div>
                 </div>
-                <div id="button-select-start-container">
-                    <div>
+                <img id="pokemon-logo" src="pokemon-logo.png" alt="Le logo de Pokemon">
+                <div id="button-select-start-section">
+                    <div class="button-select-start-container">
                         <div class="button-select-start"></div>
                         <h3>select</h3>
                     </div>
-                    <div>
+                    <div class="button-select-start-container">
                         <div class="button-select-start"></div>
                         <h3>start</h3>
                     </div>
@@ -101,7 +120,9 @@
         // Cibler la boite de la game boy + Nintendo + start / select
         let gameboyCase = document.getElementById('yellow-case');
         let nintendo = document.querySelector('#nintendo h2');
-        let startSelect = document.querySelector('#button-select-start-container');
+        let startSelect = document.querySelector('#button-select-start-section');
+        let pikachu = document.getElementById('pikachu-image');
+        let pokemonLogo = document.getElementById('pokemon-logo');
 
         // Cibler les différents boutons de couleurs
         let yellowButton = document.getElementById('button-yellow');
@@ -109,6 +130,7 @@
         let greenButton = document.getElementById('button-green');
         let purpleButton = document.getElementById('button-purple');
         let blueButton = document.getElementById('button-blue');
+        let pokemonButton = document.getElementById('button-pokemon');
 
         // Ajouter des évenements d'écoute
         yellowButton.addEventListener('click', changeToYellow);
@@ -116,6 +138,7 @@
         greenButton.addEventListener('click', changeToGreen);
         purpleButton.addEventListener('click', changeToPurple);
         blueButton.addEventListener('click', changeToBlue);
+        pokemonButton.addEventListener('click', changeToPokemon);
 
         // Fonction changeToYellow
         function changeToYellow(){
@@ -123,6 +146,8 @@
             nintendo.style.color = "#d6b520";
             nintendo.style.border = "3px solid #d6b520";
             startSelect.style.color = "#d6b520";
+            pikachu.style.display = "";
+            pokemonLogo.style.display = "";
         };
 
         // Fonction changeToRed
@@ -131,6 +156,8 @@
             nintendo.style.color = "#b91846";
             nintendo.style.border = "3px solid #b91846";
             startSelect.style.color = "#b91846";
+            pikachu.style.display = "";
+            pokemonLogo.style.display = "";
         };
 
         // Fonction changeToGreen
@@ -139,6 +166,8 @@
             nintendo.style.color = "#69942e";
             nintendo.style.border = "3px solid #69942e";
             startSelect.style.color = "#69942e";
+            pikachu.style.display = "";
+            pokemonLogo.style.display = "";
         };
 
         // Fonction changeToPurple
@@ -147,6 +176,8 @@
             nintendo.style.color = "#4b247e";
             nintendo.style.border = "3px solid #4b247e";
             startSelect.style.color = "#4b247e";
+            pikachu.style.display = "";
+            pokemonLogo.style.display = "";
         };
 
         // Fonction changeToBlue
@@ -155,6 +186,18 @@
             nintendo.style.color = "#0f6070";
             nintendo.style.border = "3px solid #0f6070";
             startSelect.style.color = "#0f6070";
+            pikachu.style.display = "";
+            pokemonLogo.style.display = "";
+        };
+
+        // Fonction changeToYellow
+        function changeToPokemon(){
+            gameboyCase.style.backgroundColor = "#f1d631";
+            nintendo.style.color = "#d6b520";
+            nintendo.style.border = "3px solid #d6b520";
+            startSelect.style.color = "#d6b520";
+            pikachu.style.display = "block";
+            pokemonLogo.style.display = "block";
         };
 
 
@@ -163,6 +206,7 @@
         let onOffButton = document.getElementById('on-off-button');
         let redLed = document.getElementById('red-led');
         let startAudio = document.getElementById('start-audio');
+        let canvas = document.getElementById('screen');
 
         // jouter un évenement d'écoute "click"
         onOffButton.addEventListener('click', switchOnOff);
@@ -173,13 +217,16 @@
             if(active == true){
                 redLed.style.backgroundColor = "red";
                 startAudio.play();
+                onOffButton.innerHTML = "Push to OFF";
+                canvas.style.backgroundColor = "#c6ccb2";
                 active = false;
             } else {
-                redLed.style.backgroundColor = "#440000";
+                redLed.style.backgroundColor = "";
+                canvas.style.backgroundColor = "";
+                onOffButton.innerHTML = "Push to play";
                 active = true;
             }
         };
-
     </script>
 </body>
 </html>

@@ -44,7 +44,6 @@ body{
 .color-button-containers{
     display: flex;
     align-items: center;
-    cursor: pointer;
 }
 
 .color-button{
@@ -77,7 +76,20 @@ body{
     background-color: #147d93;
 }
 
+#button-pokemon{
+    display: flex;
+    justify-content: center;
+}
+
+#pokeball-button{
+    height: 3.2vh;
+}
+
 /***** ON / OFF SECTION *****/
+#on-off-section{
+    padding-top: 2vh;
+}
+
 #on-off-button{
     padding: 1vh 2vh;
     border-radius: 20px;
@@ -94,6 +106,7 @@ width: 50vh;
 background-color: #f1d631;
 border-radius: 20px;
 box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.25);
+transition: 0.25s;
 }
 
 /****  SCREEN SECTION ****/
@@ -145,17 +158,22 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.25);
     color: #63768e;
     text-transform: uppercase;
     font-style: italic;
+    font-family: 'Gill Sans';
+    letter-spacing: -1px;
+    font-weight: 600;
 }
 
-h1 span{
-    font-style: normal;
+#title-gameboy img{
+    margin-left: 1vh;
+    max-height: 2vh;
 }
 
 /*** SCREEN - CANVAS ***/
 canvas{
     height: 29vh;
     width: 29vh;
-    background-color: #6d767d;
+    background-color: #484a4b;
+    transition: 0.25s;
 }
 
 
@@ -179,6 +197,7 @@ canvas{
     color: #d6b520;
     border: 3px solid #d6b520;
     border-radius: 20px;
+    transition: 0.25s;
 }
 
 /*** ARROWS BUTTON ***/
@@ -188,6 +207,7 @@ canvas{
     justify-content: space-between;
     width: 50vh;
     height: 15vh;
+    margin-bottom: 9vh ;
 }
 
 /**  BUTTON LEFT ARROWS **/
@@ -207,7 +227,19 @@ canvas{
     box-shadow: 4px -2px 2px 0px rgba(0,0,0,0.90);
     cursor: pointer;
     z-index: 98;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+#triangle-top{
+    display : inline-block;
+    height : 0;
+    width : 0;
+    border-right : 1.5vh solid transparent;
+    border-bottom : 3vh solid #29292b;
+    border-left : 1.5vh solid transparent;
+   }
 
 #arrows-left{
     grid-row: 2/3;
@@ -216,13 +248,35 @@ canvas{
     border-radius: 7.5px 0px 0px 7.5px;
     box-shadow: 4px -7px 2px -3px rgba(0,0,0,0.90);
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+#triangle-left{
+    display : inline-block;
+    height : 0;
+    width : 0;
+    border-top : 1.5vh solid transparent;
+    border-right : 3vh solid #29292b;
+    border-bottom : 1.5vh solid transparent;
+   }
 
 #arrow-center{
     grid-row: 2/3;
     grid-column: 2/3;
     background-color: #383c4c;
     z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#circle-center{
+    height: 3vh;
+    width: 3vh;
+    background-color: #29292b;
+    border-radius: 20px;
 }
 
 #arrows-right{
@@ -232,7 +286,19 @@ canvas{
     border-radius: 0px 7.5px 7.5px 0px;
     box-shadow: 0px 0px 2px 4px rgba(0,0,0,0.90);
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+#triangle-right{
+    display : inline-block;
+    height : 0;
+    width : 0;
+    border-top : 1.5vh solid transparent;
+    border-bottom : 1.5vh solid transparent;
+    border-left : 3vh solid #29292b;
+   }
 
 #arrows-bottom{
     grid-row: 3/4;
@@ -241,7 +307,19 @@ canvas{
     border-radius: 0px 0px 7.5px 7.5px;
     box-shadow: 6px -1px 2px -2px rgba(0,0,0,0.90);
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+#triangle-bottom{
+    display : inline-block;
+    height : 0;
+    width : 0;
+    border-top : 3vh solid #29292b;
+    border-right : 1.5vh solid transparent;
+    border-left : 1.5vh solid transparent;
+   }
 
 /**  BUTTON RIGHT A AND B **/
 #button-A-B-container{
@@ -279,14 +357,40 @@ canvas{
     cursor: pointer;
 }
 
+/**** POKEMON VERSION ****/
+#pokemon-logo{
+    height: 7.5vh;
+    position: absolute;
+    bottom: 20vh;
+    display: none;
+}
+
+#pikachu-image{
+    height: 9vh;
+    position: absolute;
+    bottom: 0;
+    left: 1.5vh;
+    display: none;
+}
+
+
 /* SELECT - START */
-#button-select-start-container{
+#button-select-start-section{
     display: flex;
     justify-content: space-evenly;
     width: 20vh;
-    text-align: center;
     color: #d6b520;
     font-size: 1.5vh;
+    transition: 0.25s;
+    margin-bottom: 6vh ;
+    text-transform: uppercase;
+}
+.button-select-start-container{
+    height: 5vh;
+    width: 7.5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .button-select-start{
@@ -301,11 +405,11 @@ canvas{
 
 /************* RESPONSIVE *************/
 /*** TABLET  ***/
-@media screen and (max-width: 1024px) and (min-width: 768px){
-    h1{
-        color: rgb(255, 183, 175);
+/* @media screen and (max-width: 1024px) and (min-width: 768px){
+    body{
+        background-color: rgb(255, 183, 175);
     }
-}
+} */
 
 /*** SMARTPHONE ***/
 @media screen and (max-width: 768px){
