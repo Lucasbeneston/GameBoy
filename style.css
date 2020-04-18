@@ -12,6 +12,77 @@ body{
     background-color: rgb(205, 230, 195);
 }
 
+/************* MAIN CONTENT SECTION *************/
+#main-section{
+    padding: 5vh 0;
+}
+
+#main-header-section h1{
+    font-size: 30px;
+}
+
+#main-header-section p{
+    font-size: 10px;
+    font-style: italic;
+}
+
+#main-section h2{
+    font-size: 20px;
+    padding: 2.5vh 0;
+}
+
+#main-section h3{
+    font-size: 15px;
+}
+
+/***** GAME BOY COLOR CHANGE SECTION *****/
+#gameboy-change-color{
+    display: flex;
+    flex-direction: column;
+}
+
+.color-button-containers{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.color-button{
+    height: 4vh;
+    width: 4vh;
+    border-radius: 25px;
+    margin: 1vh;
+    border: 2px solid white;
+    outline: none;
+    cursor: pointer;
+}
+
+.button-yellow{
+    background-color: #f1d631;
+}
+
+.button-red{
+    background-color: #ed205b;
+}
+
+.button-green{
+    background-color: #8dc73d;
+}
+
+.button-purple{
+    background-color: #6330a7;
+}
+
+.button-blue{
+    background-color: #147d93;
+}
+
+.button-all-colors{
+    background: conic-gradient(red, yellow, lime, aqua, blue, fuchsia, red), conic-gradient(from 90deg, red, yellow, lime, aqua, blue, fuchsia, red);
+    background-blend-mode: overlay, normal;
+}
+
+/************* GAME BOY COLOR SECTION *************/
 /***** YELLOW CASE SECTION *****/
 #yellow-case{
 height: 90vh;
@@ -90,11 +161,9 @@ canvas{
     justify-content: center;
     flex-wrap: wrap;
     height: 45vh;
-    /* background-color: rgb(113, 143, 53); */
 }
 
 #nintendo{
-    /* background-color: teal; */
     width: 15vh;
     font-size: 1.5vh;
 }
@@ -114,7 +183,6 @@ canvas{
     justify-content: space-between;
     width: 50vh;
     height: 15vh;
-    /* background-color: tomato; */
 }
 
 /**  BUTTON LEFT ARROWS **/
@@ -124,7 +192,6 @@ canvas{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    /* background-color: teal; */
 }
 
 #arrows-top{
@@ -179,7 +246,6 @@ canvas{
     width: 15vh;
     font-size: 4vh;
     color: #29292b;
-    /* background-color: teal; */
 }
 
 #button-A{
@@ -213,7 +279,6 @@ canvas{
     display: flex;
     justify-content: space-evenly;
     width: 20vh;
-    /* background-color: teal; */
     text-align: center;
     color: #d6b520;
     font-size: 1.5vh;
@@ -229,19 +294,22 @@ canvas{
     cursor: pointer;
 }
 
+/************* RESPONSIVE *************/
+/*** TABLET  ***/
 @media screen and (max-width: 1024px) and (min-width: 768px){
     body{
         background-color: rgb(255, 183, 175);
     }
 }
 
+/*** SMARTPHONE ***/
 @media screen and (max-width: 768px){
     body{
         flex-direction: column-reverse;
         flex-wrap: wrap;
     }
 
-    header{
+    #main-content-section{
         background-color: rgb(255, 183, 175);
         padding: 7.5vh;
     }
