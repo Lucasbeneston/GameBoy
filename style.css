@@ -92,14 +92,20 @@ body{
 
 /***** ON / OFF SECTION *****/
 #on-off-section{
-    padding-top: 2vh;
+    padding-top: 3vh;
 }
 
 #on-off-button{
+    height: 5vh;
+    width: 10vh;
     padding: 1vh 2vh;
     border-radius: 20px;
     outline: none;
     cursor: pointer;
+    border: 3px solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    font-weight: 900;
+    background-color: transparent;
 }
 
 
