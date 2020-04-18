@@ -57,30 +57,34 @@ body{
     cursor: pointer;
 }
 
-.button-yellow{
+#button-yellow{
     background-color: #f1d631;
 }
 
-.button-red{
+#button-red{
     background-color: #ed205b;
 }
 
-.button-green{
+#button-green{
     background-color: #8dc73d;
 }
 
-.button-purple{
+#button-purple{
     background-color: #6330a7;
 }
 
-.button-blue{
+#button-blue{
     background-color: #147d93;
 }
 
-.button-all-colors{
-    background: conic-gradient(red, yellow, lime, aqua, blue, fuchsia, red), conic-gradient(from 90deg, red, yellow, lime, aqua, blue, fuchsia, red);
-    background-blend-mode: overlay, normal;
+/***** ON / OFF SECTION *****/
+#on-off-button{
+    padding: 1vh 2vh;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
 }
+
 
 /************* GAME BOY COLOR SECTION *************/
 /***** YELLOW CASE SECTION *****/
@@ -125,6 +129,7 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.25);
     border-radius: 20px;
     background-color: #440000;
     margin: 1vh 0;
+    transition-duration: 0.25s
 }
 
 #title-gameboy{
@@ -297,8 +302,8 @@ canvas{
 /************* RESPONSIVE *************/
 /*** TABLET  ***/
 @media screen and (max-width: 1024px) and (min-width: 768px){
-    body{
-        background-color: rgb(255, 183, 175);
+    h1{
+        color: rgb(255, 183, 175);
     }
 }
 

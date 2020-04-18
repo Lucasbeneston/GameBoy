@@ -6,7 +6,6 @@
     <title>Game Boy Color Project !</title>
     <meta name="description" content="Game Boy created with only CSS and JavaScipt - by Lucas BENESTON">
     <link rel="stylesheet" href="style.css">
-    <script src="animation.js"></script>
 </head>
 
 <body>
@@ -21,29 +20,31 @@
             <section id="gameboy-change-color">
                 <h2>Choose your Game Boy color !</h2>
                 <div class="color-button-containers">
-                    <button class="color-button button-yellow"></button>
-                    <h3>Game Boy Color yellow edition (1998)</h3>
+                    <button class="color-button" id="button-yellow"></button>
+                    <h3>Yellow edition (1998)</h3>
                 </div>
                 <div class="color-button-containers">
-                    <button class="color-button button-red"></button>
-                    <h3>Game Boy Color red edition (1998)</h3>
+                    <button class="color-button" id="button-red"></button>
+                    <h3>Red edition (1998)</h3>
                 </div>
                 <div class="color-button-containers">
-                    <button class="color-button button-green"></button>
-                    <h3>Game Boy Color green edition (1998)</h3>
+                    <button class="color-button" id="button-green"></button>
+                    <h3>Green edition (1998)</h3>
                 </div>
                 <div class="color-button-containers">
-                    <button class="color-button button-purple"></button>
-                    <h3>Game Boy Color purple edition (1998)</h3>
+                    <button class="color-button" id="button-purple"></button>
+                    <h3>Purple edition (1998)</h3>
                 </div>
                 <div class="color-button-containers">
-                    <button class="color-button button-blue"></button>
-                    <h3>Game Boy Color blue edition (1998)</h3>
+                    <button class="color-button" id="button-blue"></button>
+                    <h3>Blue edition (1998)</h3>
                 </div>
-                <div class="color-button-containers">
-                    <button class="color-button button-all-colors"></button>
-                    <h3>Create your own Game Boy Color edition !</h3>
-                </div>
+            </section>
+
+            <section id="on-off-section">
+                <button id="on-off-button">
+                    <p>Push to play</p>
+                </button>
             </section>
         </main>
     </section>
@@ -60,6 +61,7 @@
                     <div id="power-container">
                         <div id="red-led"></div>
                         <h4>power</h4>
+                        <audio id="start-audio" src="start-audio.mp3"></audio>
                     </div>
                 </div>
             </section>
@@ -93,5 +95,91 @@
             </section>
         </section>
     </section>
+
+    <script>
+        // POUR CHANGER LA GAMEBOY CASE
+        // Cibler la boite de la game boy + Nintendo + start / select
+        let gameboyCase = document.getElementById('yellow-case');
+        let nintendo = document.querySelector('#nintendo h2');
+        let startSelect = document.querySelector('#button-select-start-container');
+
+        // Cibler les différents boutons de couleurs
+        let yellowButton = document.getElementById('button-yellow');
+        let redButton = document.getElementById('button-red');
+        let greenButton = document.getElementById('button-green');
+        let purpleButton = document.getElementById('button-purple');
+        let blueButton = document.getElementById('button-blue');
+
+        // Ajouter des évenements d'écoute
+        yellowButton.addEventListener('click', changeToYellow);
+        redButton.addEventListener('click', changeToRed);
+        greenButton.addEventListener('click', changeToGreen);
+        purpleButton.addEventListener('click', changeToPurple);
+        blueButton.addEventListener('click', changeToBlue);
+
+        // Fonction changeToYellow
+        function changeToYellow(){
+            gameboyCase.style.backgroundColor = "#f1d631";
+            nintendo.style.color = "#d6b520";
+            nintendo.style.border = "3px solid #d6b520";
+            startSelect.style.color = "#d6b520";
+        };
+
+        // Fonction changeToRed
+        function changeToRed(){
+            gameboyCase.style.backgroundColor = "#ed205b";
+            nintendo.style.color = "#b91846";
+            nintendo.style.border = "3px solid #b91846";
+            startSelect.style.color = "#b91846";
+        };
+
+        // Fonction changeToGreen
+        function changeToGreen(){
+            gameboyCase.style.backgroundColor = "#8dc73d";
+            nintendo.style.color = "#69942e";
+            nintendo.style.border = "3px solid #69942e";
+            startSelect.style.color = "#69942e";
+        };
+
+        // Fonction changeToPurple
+        function changeToPurple(){
+            gameboyCase.style.backgroundColor = "#6330a7";
+            nintendo.style.color = "#4b247e";
+            nintendo.style.border = "3px solid #4b247e";
+            startSelect.style.color = "#4b247e";
+        };
+
+        // Fonction changeToBlue
+        function changeToBlue(){
+            gameboyCase.style.backgroundColor = "#147d93";
+            nintendo.style.color = "#0f6070";
+            nintendo.style.border = "3px solid #0f6070";
+            startSelect.style.color = "#0f6070";
+        };
+
+
+        // POUR DÉMARER LA GAME BOY
+        // Cibler le bouton ON / OFF + la led rouge de la game boy
+        let onOffButton = document.getElementById('on-off-button');
+        let redLed = document.getElementById('red-led');
+        let startAudio = document.getElementById('start-audio');
+
+        // jouter un évenement d'écoute "click"
+        onOffButton.addEventListener('click', switchOnOff);
+
+        // Fonction switchOnOff 
+        let active = true;
+        function switchOnOff(){
+            if(active == true){
+                redLed.style.backgroundColor = "red";
+                startAudio.play();
+                active = false;
+            } else {
+                redLed.style.backgroundColor = "#440000";
+                active = true;
+            }
+        };
+
+    </script>
 </body>
 </html>
