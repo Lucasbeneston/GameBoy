@@ -108,6 +108,12 @@ body{
     background-color: transparent;
 }
 
+/***** KEYCODE TEST *****/
+#keypress-section{
+    padding-top: 10vh;
+    font-size: 12px;
+}
+
 
 /************* GAME BOY COLOR SECTION *************/
 /***** YELLOW CASE SECTION *****/
@@ -195,6 +201,7 @@ canvas{
     justify-content: center;
     flex-wrap: wrap;
     height: 45vh;
+    position: relative;
 }
 
 #nintendo{
@@ -321,6 +328,7 @@ canvas{
     font-size: 4vh;
     color: #29292b;
     transition: var(--transition);
+    position: relative;
 }
 
 #button-A{
@@ -336,8 +344,6 @@ canvas{
     cursor: pointer;
     transition: var(--transition);
 }
-
-
 
 #button-B{
     height: 6vh;
@@ -357,7 +363,7 @@ canvas{
 #pokemon-logo{
     height: 7.5vh;
     position: absolute;
-    bottom: 20vh;
+    bottom: 13.5vh;
     display: none;
     transition: var(--transition);
 }
@@ -450,16 +456,50 @@ canvas{
     body{
         flex-direction: column-reverse;
         flex-wrap: wrap;
+        padding-top: 0vh;
     }
 
+    /**** CONTENT SECTION ****/
     #main-content-section{
-        background-color: rgb(255, 183, 175);
-        padding: 7.5vh;
+        height: 8vh;
+        display: flex;
+        justify-content: space-around;
     }
 
+    #main-section{
+        display: flex;
+        flex-direction: row-reverse;
+        padding: 0;
+    }
+
+    #main-header-section, 
+    #main-content-section h2,
+    #main-content-section h3,
+    #keypress-section{
+        display: none;
+    }
+
+    #gameboy-change-color{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    #on-off-section{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #on-off-section{
+        padding: 0vh 1vh;
+    }
+
+    /**** GAME BOY SECTION ****/
     #game-boy{
         display: flex;
         justify-content: center;
-        height: 100vh;
+        align-items: flex-end;
+        height: 92vh;
     }
 }
