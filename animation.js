@@ -37,19 +37,7 @@
             nintendo.style.color = "#d6b520";
             nintendo.style.border = "3px solid #d6b520";
             startSelect.style.color = "#d6b520";
-            pikachu.style.display = "";
-            togepi.style.display = "";
-            rondoudou.style.display = "";
-            pokeball.style.display = "";
-            powerText.style.margin = ""
-            pokemonLogo.style.display = "";
-            buttonA.style.backgroundColor = "";
-            buttonA.style.color = "";
-            buttonB.style.backgroundColor = "";
-            buttonB.style.color = "";
-            for(let i = 0; i < arrows.length; i++){
-                arrows[i].style.backgroundColor = "";
-            }
+            resetPokemon();
         };
 
         // Fonction changeToRed
@@ -58,19 +46,7 @@
             nintendo.style.color = "#b91846";
             nintendo.style.border = "3px solid #b91846";
             startSelect.style.color = "#b91846";
-            pikachu.style.display = "";
-            togepi.style.display = "";
-            rondoudou.style.display = "";
-            pokeball.style.display = "";
-            powerText.style.margin = ""
-            pokemonLogo.style.display = "";
-            buttonA.style.backgroundColor = "";
-            buttonA.style.color = "";
-            buttonB.style.backgroundColor = "";
-            buttonB.style.color = "";
-            for(let i = 0; i < arrows.length; i++){
-                arrows[i].style.backgroundColor = "";
-            }
+            resetPokemon();
         };
 
         // Fonction changeToGreen
@@ -79,19 +55,7 @@
             nintendo.style.color = "#69942e";
             nintendo.style.border = "3px solid #69942e";
             startSelect.style.color = "#69942e";
-            pikachu.style.display = "";
-            togepi.style.display = "";
-            rondoudou.style.display = "";
-            pokeball.style.display = "";
-            powerText.style.margin = ""
-            pokemonLogo.style.display = "";
-            buttonA.style.backgroundColor = "";
-            buttonA.style.color = "";
-            buttonB.style.backgroundColor = "";
-            buttonB.style.color = "";
-            for(let i = 0; i < arrows.length; i++){
-                arrows[i].style.backgroundColor = "";
-            }
+            resetPokemon();
         };
 
         // Fonction changeToPurple
@@ -100,19 +64,7 @@
             nintendo.style.color = "#4b247e";
             nintendo.style.border = "3px solid #4b247e";
             startSelect.style.color = "#4b247e";
-            pikachu.style.display = "";
-            togepi.style.display = "";
-            rondoudou.style.display = "";
-            pokeball.style.display = "";
-            powerText.style.margin = ""
-            pokemonLogo.style.display = "";
-            buttonA.style.backgroundColor = "";
-            buttonA.style.color = "";
-            buttonB.style.backgroundColor = "";
-            buttonB.style.color = "";
-            for(let i = 0; i < arrows.length; i++){
-                arrows[i].style.backgroundColor = "";
-            }
+            resetPokemon();
         };
 
         // Fonction changeToBlue
@@ -121,19 +73,7 @@
             nintendo.style.color = "#0f6070";
             nintendo.style.border = "3px solid #0f6070";
             startSelect.style.color = "#0f6070";
-            pikachu.style.display = "";
-            togepi.style.display = "";
-            rondoudou.style.display = "";
-            pokeball.style.display = "";
-            powerText.style.margin = ""
-            pokemonLogo.style.display = "";
-            buttonA.style.backgroundColor = "";
-            buttonA.style.color = "";
-            buttonB.style.backgroundColor = "";
-            buttonB.style.color = "";
-            for(let i = 0; i < arrows.length; i++){
-                arrows[i].style.backgroundColor = "";
-            }
+            resetPokemon();
         };
 
         // Fonction changeToPokemon
@@ -157,6 +97,23 @@
             }
         };
 
+        // Rest pokemonElements
+        function resetPokemon(){
+            pikachu.style.display = "";
+            togepi.style.display = "";
+            rondoudou.style.display = "";
+            pokeball.style.display = "";
+            powerText.style.margin = ""
+            pokemonLogo.style.display = "";
+            buttonA.style.backgroundColor = "";
+            buttonA.style.color = "";
+            buttonB.style.backgroundColor = "";
+            buttonB.style.color = "";
+            for(let i = 0; i < arrows.length; i++){
+                arrows[i].style.backgroundColor = "";
+            }
+        }
+
 
         // POUR DÉMARER LA GAME BOY
         // Cibler le bouton ON / OFF + la led rouge + l'Audio + l'écran 
@@ -173,7 +130,7 @@
         linearGradient.addColorStop(0.75, '#b72241');
         linearGradient.addColorStop(1, '#f3f128');
 
-        // jouter un évenement d'écoute "click"
+        // Ajouter un évenement d'écoute "click" pour ON/OFF
         onOffButton.addEventListener('click', switchOnOff);
 
         // Fonction switchOnOff 
@@ -208,6 +165,7 @@
         // Créer une span vide pour afficher "You pressed :"
         let touches = document.getElementById('touches');
 
+        // Ajouter un évenement d'écoute "keydown" pour les touches du clavier
         window.addEventListener('keydown', keyDown);
             function keyDown(e) {
                 for(var i = 0; i < arrows.length ; i++){
@@ -238,19 +196,20 @@
                 }
             };
 
+        // Ajouter un évenement d'écoute "keyup" pour reset la class 'press'
         window.addEventListener('keyup', keyUp);
-            function keyUp(e){
-                for(var i = 0; i < arrows.length ; i++){
-                        if(e.keyCode == arrows[i].dataset.key){
-                        arrows[i].classList.remove('press');
-                        } 
-                }
+        function keyUp(e){
+            for(var i = 0; i < arrows.length ; i++){
+                if(e.keyCode == arrows[i].dataset.key){
+                    arrows[i].classList.remove('press');
+                } 
+            }
 
-                for(var i = 0; i < selectStart.length ; i++){
-                    if(e.keyCode == selectStart[i].dataset.key){
-                        selectStart[i].classList.remove('press');
-                    } 
-                }
+            for(var i = 0; i < selectStart.length ; i++){
+                if(e.keyCode == selectStart[i].dataset.key){
+                    selectStart[i].classList.remove('press');
+                } 
+            }
 
                 // A optimiser : remove('press')
                 if (e.keyCode == buttonA.dataset.key){
@@ -259,6 +218,6 @@
                 if (e.keyCode == buttonB.dataset.key){
                     buttonB.style.backgroundColor = '';
                 }
-            };
+        };
         
         
