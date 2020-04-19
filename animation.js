@@ -11,6 +11,7 @@
         let pokemonLogo = document.getElementById('pokemon-logo');
         let buttonA = document.getElementById('button-A');
         let buttonB = document.getElementById('button-B');
+        let selectStart = document.getElementsByClassName('button-select-start');
         let arrows = document.getElementsByClassName('arrows');
         let triangles = document.querySelector('.triangle-arrows');
 
@@ -204,3 +205,60 @@
 
 
         // ACTIVER LES TOUCHES DE LA GAME BOY + TOUCHES DU CLAVIER
+        // Créer une span vide pour afficher "You pressed :"
+        let touches = document.getElementById('touches');
+
+        window.addEventListener('keydown', keyDown);
+            function keyDown(e) {
+                for(var i = 0; i < arrows.length ; i++){
+                    if(e.keyCode == arrows[i].dataset.key){
+                        // Affiche un message "Your pressed : " + le code de la touche
+                        touches.innerHTML = '<h4>Keycode keyboard : ' + e.keyCode + '</h4>';
+                        // Ajoute la class "playing"
+                        arrows[i].classList.add('press');
+                    } 
+                }
+
+                for(var i = 0; i < selectStart.length ; i++){
+                    if(e.keyCode == selectStart[i].dataset.key){
+                        touches.innerHTML = '<h4>Keycode keyboard : ' + e.keyCode + '</h4>';
+                        selectStart[i].classList.add('press');
+                    } 
+                }
+
+                // A optimiser : Passe a une class + boucle for + add('press')
+                if (e.keyCode == buttonA.dataset.key){
+                    touches.innerHTML = '<h4>Keycode keyboard : ' + e.keyCode + '</h4>';
+                    buttonA.style.backgroundColor = '#f3ef07';
+                }
+                // A optimiser : Passe a une class + boucle for + add('press')
+                if (e.keyCode == buttonB.dataset.key){
+                    touches.innerHTML = '<h4>Keycode keyboard : ' + e.keyCode + '</h4>';
+                    buttonB.style.backgroundColor = '#f3ef07';
+                }
+            };
+
+        window.addEventListener('keyup', keyUp);
+            function keyUp(e){
+                for(var i = 0; i < arrows.length ; i++){
+                        if(e.keyCode == arrows[i].dataset.key){
+                        arrows[i].classList.remove('press');
+                        } 
+                }
+
+                for(var i = 0; i < selectStart.length ; i++){
+                    if(e.keyCode == selectStart[i].dataset.key){
+                        selectStart[i].classList.remove('press');
+                    } 
+                }
+
+                // A optimiser : remove('press')
+                if (e.keyCode == buttonA.dataset.key){
+                    buttonA.style.backgroundColor = '';
+                }
+                if (e.keyCode == buttonB.dataset.key){
+                    buttonB.style.backgroundColor = '';
+                }
+            };
+        
+        

@@ -41,7 +41,7 @@
                 </div>
                 <div class="color-button-containers">
                     <button class="color-button" id="button-pokemon">
-                        <img id="pokeball-button" src="Pokeball.png" alt="">
+                        <img id="pokeball-button" src="images/Pokeball.png" alt="">
                     </button>
                     <h3>Pokemon edition (1999)</h3>
                 </div>
@@ -53,6 +53,10 @@
                     <p>ON</p>
                 </button>
             </section>
+
+            <section>
+                <span id="touches"></span>
+            </section>
         </main>
     </section>
 
@@ -61,19 +65,19 @@
         <section id="yellow-case">
             <section id="screen-section">
                 <div id="border-screen">
-                    <img id="pikachu-image" src="pikachu.png" alt="Une photo de Pikachu">
-                    <img id="togepi-image" src="togepi.png" alt="Une photo de Togepi">
-                    <img id="rondoudou-image" src="rondoudou.png" alt="Une photo de Rondoudou">
-                    <img id="pokeball-border" src="Pokeball-border.png" alt="Une photo d'une Pokeball">
+                    <img id="pikachu-image" src="images/pikachu.png" alt="Une photo de Pikachu">
+                    <img id="togepi-image" src="images/togepi.png" alt="Une photo de Togepi">
+                    <img id="rondoudou-image" src="images/rondoudou.png" alt="Une photo de Rondoudou">
+                    <img id="pokeball-border" src="images/Pokeball-border.png" alt="Une photo d'une Pokeball">
                     <canvas id="screen"></canvas>
                     <div id="title-gameboy">
                         <h1>game boy</h1>
-                        <img src="Game_Boy_Color_logo.png" alt="La partie Color du logo de la Game Boy Color">
+                        <img src="images/Game_Boy_Color_logo.png" alt="La partie Color du logo de la Game Boy Color">
                     </div>
                     <div id="power-container">
                         <div id="red-led"></div>
                         <h4 id="power">power</h4>
-                        <audio id="start-audio" src="start-audio.mp3"></audio>
+                        <audio id="start-audio" src="audio/start-audio.mp3"></audio>
                     </div>
                 </div>
             </section>
@@ -83,35 +87,35 @@
                 </div>
                 <div id="button-container">
                     <div id="button-arrows">
-                        <div id="arrows-top" class="arrows">
+                        <div data-key="38" id="arrows-top" class="arrows">
                             <div id="triangle-top" class="triangle-arrows"></div>
                         </div>
-                        <div id="arrows-left" class="arrows">
+                        <div data-key="37" id="arrows-left" class="arrows">
                             <div id="triangle-left" class="triangle-arrows"></div>
                         </div>
                         <div id="arrow-center" class="arrows">
                             <div id="circle-center" class="triangle-arrows"></div>
                         </div>
-                        <div id="arrows-right" class="arrows">
+                        <div data-key="39" id="arrows-right" class="arrows">
                             <div id="triangle-right" class="triangle-arrows"></div>
                         </div>
-                        <div id="arrows-bottom" class="arrows">
+                        <div data-key="40" id="arrows-bottom" class="arrows">
                             <div id="triangle-bottom" class="triangle-arrows"></div>
                         </div>
                     </div>
                     <div id="button-A-B-container">
-                        <div id="button-B">B</div>
-                        <div id="button-A">A</div>
+                        <div data-key="66" id="button-B">B</div>
+                        <div data-key="65" id="button-A">A</div>
                     </div>
                 </div>
-                <img id="pokemon-logo" src="pokemon-logo.png" alt="Le logo de Pokemon">
+                <img id="pokemon-logo" src="images/pokemon-logo.png" alt="Le logo de Pokemon">
                 <div id="button-select-start-section">
                     <div class="button-select-start-container">
-                        <div class="button-select-start"></div>
+                        <div data-key="83" class="button-select-start"></div>
                         <h3>select</h3>
                     </div>
                     <div class="button-select-start-container">
-                        <div class="button-select-start"></div>
+                        <div data-key="32" class="button-select-start"></div>
                         <h3>start</h3>
                     </div>
                 </div>

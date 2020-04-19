@@ -337,6 +337,8 @@ canvas{
     transition: var(--transition);
 }
 
+
+
 #button-B{
     height: 6vh;
     width: 6vh;
@@ -424,9 +426,18 @@ canvas{
     box-shadow: 0px 0px 2px 3px rgba(0,0,0,0.90);
     margin-bottom: 1vh;
     cursor: pointer;
+    transition: var(--transition);
 }
 
+/* SECTION CSS > JS */
+/* Add class .press if you press in your keyboard the good button */
+.press{
+    background-color: #f3ef07;
+}
+
+
 /************* RESPONSIVE *************/
+
 /*** TABLET  ***/
 /* @media screen and (max-width: 1024px) and (min-width: 768px){
     body{
