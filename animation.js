@@ -5,7 +5,9 @@
         let startSelect = document.querySelector('#button-select-start-section');
         let pikachu = document.getElementById('pikachu-image');
         let togepi = document.getElementById('togepi-image');
-        let rondoudou = document.getElementById('rondoudou-image')
+        let rondoudou = document.getElementById('rondoudou-image');
+        let pokeball = document.getElementById('pokeball-border');
+        let powerText = document.getElementById('power');
         let pokemonLogo = document.getElementById('pokemon-logo');
         let buttonA = document.getElementById('button-A');
         let buttonB = document.getElementById('button-B');
@@ -37,6 +39,8 @@
             pikachu.style.display = "";
             togepi.style.display = "";
             rondoudou.style.display = "";
+            pokeball.style.display = "";
+            powerText.style.margin = ""
             pokemonLogo.style.display = "";
             buttonA.style.backgroundColor = "";
             buttonA.style.color = "";
@@ -56,6 +60,8 @@
             pikachu.style.display = "";
             togepi.style.display = "";
             rondoudou.style.display = "";
+            pokeball.style.display = "";
+            powerText.style.margin = ""
             pokemonLogo.style.display = "";
             buttonA.style.backgroundColor = "";
             buttonA.style.color = "";
@@ -75,6 +81,8 @@
             pikachu.style.display = "";
             togepi.style.display = "";
             rondoudou.style.display = "";
+            pokeball.style.display = "";
+            powerText.style.margin = ""
             pokemonLogo.style.display = "";
             buttonA.style.backgroundColor = "";
             buttonA.style.color = "";
@@ -94,6 +102,8 @@
             pikachu.style.display = "";
             togepi.style.display = "";
             rondoudou.style.display = "";
+            pokeball.style.display = "";
+            powerText.style.margin = ""
             pokemonLogo.style.display = "";
             buttonA.style.backgroundColor = "";
             buttonA.style.color = "";
@@ -113,6 +123,8 @@
             pikachu.style.display = "";
             togepi.style.display = "";
             rondoudou.style.display = "";
+            pokeball.style.display = "";
+            powerText.style.margin = ""
             pokemonLogo.style.display = "";
             buttonA.style.backgroundColor = "";
             buttonA.style.color = "";
@@ -132,6 +144,8 @@
             pikachu.style.display = "block";
             togepi.style.display = "block";
             rondoudou.style.display = "block";
+            pokeball.style.display = "block";
+            powerText.style.margin = "2.5vh 0 0"
             pokemonLogo.style.display = "block";
             buttonA.style.backgroundColor = "#e42f36";
             buttonA.style.color = "#c51c26";
@@ -149,6 +163,14 @@
         let redLed = document.getElementById('red-led');
         let startAudio = document.getElementById('start-audio');
         let canvas = document.getElementById('screen');
+        let context = canvas.getContext('2d');
+        // Créer un gradient de couleur dans le canvas
+        let linearGradient = context.createLinearGradient(60, 80, 240, 60);
+        linearGradient.addColorStop(0, '#364375');
+        linearGradient.addColorStop(0.25, '#0ea83c');
+        linearGradient.addColorStop(0.5, '#ce0d71');
+        linearGradient.addColorStop(0.75, '#b72241');
+        linearGradient.addColorStop(1, '#f3f128');
 
         // jouter un évenement d'écoute "click"
         onOffButton.addEventListener('click', switchOnOff);
@@ -161,11 +183,24 @@
                 startAudio.play();
                 onOffButton.innerHTML = "OFF";
                 canvas.style.backgroundColor = "#c6ccb2";
+                // Premier texte : GAME BOY
+                context.font = "bold 40px Roboto, Arial, serif";
+                context.fillStyle = linearGradient;
+                context.fillText('GAME BOY', 40, 80);
+                // Deuxième texte : Nintendo®
+                context.font = "bold 15px Roboto, Arial, serif";
+                context.fillStyle = "black";
+                context.fillText('Nintendo®', 110, 110);
                 active = false;
             } else {
                 redLed.style.backgroundColor = "";
                 canvas.style.backgroundColor = "";
                 onOffButton.innerHTML = "ON";
+                // Permet d'effacer le contenu de Canvas de la largeur à la hauteur du canvas
+                context.clearRect(0, 0, canvas.width, canvas.height);
                 active = true;
             }
         };
+
+
+        // ACTIVER LES TOUCHES DE LA GAME BOY + TOUCHES DU CLAVIER
