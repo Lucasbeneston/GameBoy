@@ -118,18 +118,18 @@ body{
 /************* GAME BOY COLOR SECTION *************/
 /***** YELLOW CASE SECTION *****/
 #yellow-case{
-height: 90vh;
+height: 88vh;
 width: 50vh;
 background-color: #f1d631;
 border-radius: 2vh;
-box-shadow: 1vh 1vh 0.5vh 0vh rgba(0,0,0,0.25);
+box-shadow: 1vh 1vh 0.5vh 0vh grey;
 transition: var(--transition);
 position: relative;
 }
 
 /** Régler le problème d'ombrages entre #yellow-case VS #border-bottom-case **/
 /* Ajouter #border-bottom-case dans le JavaScript pour changer sa couleur aussi */
-/* #border-bottom-case{
+#border-bottom-case{
     height: 3vh;
     width: 48vh;
     background-color: #f1d631;
@@ -138,8 +138,9 @@ position: relative;
     left: 1vh;
     bottom: 0;
     margin-bottom: -1.1vh;
-    box-shadow: 1vh 1vh 0.5vh 0vh rgba(0,0,0,0.25);
-} */
+    box-shadow: 1vh 1vh 0.5vh 0vh grey;
+    transition: var(--transition);
+}
 
 /****  SCREEN SECTION ****/
 #screen-section{
@@ -189,25 +190,27 @@ position: relative;
 
 #title-gameboy{
     display: flex;
-    width: 29vh;
+    width: 30vh;
     height: 6.5vh;
     justify-content: center;
     align-items: center;
 }
 
 #game-boy h1{
-    font-size: 2.75vh;
+    font-size: 3.5vh;
     color: #63768e;
     text-transform: uppercase;
     font-style: italic;
     font-family: 'Gill Sans';
-    letter-spacing: -1px;
+    letter-spacing: -1.75px;
     font-weight: 600;
+    z-index: 99;
 }
 
 #title-gameboy img{
     margin-left: 1vh;
-    max-height: 2vh;
+    max-height: 2.5vh;
+    z-index: 99;
 }
 
 /*** SCREEN - CANVAS ***/
@@ -401,18 +404,18 @@ canvas{
     display: none;
     transition: var(--transition);
     z-index: 99;
-    transform: rotate(5deg);
+    transform: rotate(7deg);
 }
 
 #togepi-image{
     height: 6vh;
     position: absolute;
     bottom: 0;
-    right: 1.5vh;
+    right: 0.5vh;
     display: none;
     transition: var(--transition);
     z-index: 99;
-    transform: rotate(-5deg);
+    transform: rotate(-7deg);
 }
 
 #rondoudou-image{
@@ -490,7 +493,7 @@ canvas{
 
     /**** CONTENT SECTION ****/
     #main-content-section{
-        height: 8vh;
+        height: 10vh;
         display: flex;
         justify-content: space-around;
     }
@@ -529,6 +532,6 @@ canvas{
         display: flex;
         justify-content: center;
         align-items: flex-end;
-        height: 92vh;
+        height: 90vh;
     }
 }

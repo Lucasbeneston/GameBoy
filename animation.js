@@ -1,11 +1,13 @@
         // Créer un localStorage
         //localStorage['key'] = value;
+        
         // localStorage.setItem('key', value);
         // localStorage.getItem('key');
 
         // POUR CHANGER LA GAMEBOY CASE
         // Cibler la boite de la game boy + Nintendo + start / select
         let gameboyCase = document.getElementById('yellow-case');
+        let gameboyCaseBottom = document.getElementById('border-bottom-case');
         let nintendo = document.querySelector('#nintendo h2');
         let startSelect = document.querySelector('#button-select-start-section');
         let pikachu = document.getElementById('pikachu-image');
@@ -39,6 +41,7 @@
         // Fonction changeToYellow
         function changeToYellow(){
             gameboyCase.style.backgroundColor = "#f1d631";
+            gameboyCaseBottom.style.backgroundColor = "#f1d631";
             nintendo.style.color = "#d6b520";
             nintendo.style.border = "3px solid #d6b520";
             startSelect.style.color = "#d6b520";
@@ -48,6 +51,7 @@
         // Fonction changeToRed
         function changeToRed(){
             gameboyCase.style.backgroundColor = "#ed205b";
+            gameboyCaseBottom.style.backgroundColor = "#ed205b";
             nintendo.style.color = "#b91846";
             nintendo.style.border = "3px solid #b91846";
             startSelect.style.color = "#b91846";
@@ -57,6 +61,7 @@
         // Fonction changeToGreen
         function changeToGreen(){
             gameboyCase.style.backgroundColor = "#8dc73d";
+            gameboyCaseBottom.style.backgroundColor = "#8dc73d";
             nintendo.style.color = "#69942e";
             nintendo.style.border = "3px solid #69942e";
             startSelect.style.color = "#69942e";
@@ -66,6 +71,7 @@
         // Fonction changeToPurple
         function changeToPurple(){
             gameboyCase.style.backgroundColor = "#6330a7";
+            gameboyCaseBottom.style.backgroundColor = "#6330a7";
             nintendo.style.color = "#4b247e";
             nintendo.style.border = "3px solid #4b247e";
             startSelect.style.color = "#4b247e";
@@ -75,6 +81,7 @@
         // Fonction changeToBlue
         function changeToBlue(){
             gameboyCase.style.backgroundColor = "#147d93";
+            gameboyCaseBottom.style.backgroundColor = "#147d93";
             nintendo.style.color = "#0f6070";
             nintendo.style.border = "3px solid #0f6070";
             startSelect.style.color = "#0f6070";
@@ -84,6 +91,7 @@
         // Fonction changeToPokemon
         function changeToPokemon(){
             gameboyCase.style.backgroundColor = "#f1d631";
+            gameboyCaseBottom.style.backgroundColor = "#f1d631";
             nintendo.style.color = "#d6b520";
             nintendo.style.border = "3px solid #d6b520";
             startSelect.style.color = "#d6b520";
