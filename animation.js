@@ -79,8 +79,6 @@
             document.documentElement.style.setProperty('--buttonA-color', '#e42f36');
             document.documentElement.style.setProperty('--buttonB-color', '#09895e');
             powerText.style.margin = "2.5vh 0 0";
-            // buttonA.style.color = "#c51c26";
-            // buttonB.style.color = "#09895e";
             
             for(let i = 0; i < imagesPokemon.length; i++){
                 imagesPokemon[i].style.display = "block";
@@ -93,8 +91,6 @@
             document.documentElement.style.setProperty('--buttonA-color', '');
             document.documentElement.style.setProperty('--buttonB-color', '');
             powerText.style.margin = "";
-            // buttonA.style.color = "";
-            // buttonB.style.color = "";
 
             for(let i = 0; i < imagesPokemon.length; i++){
                 imagesPokemon[i].style.display = "";

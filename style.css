@@ -460,8 +460,7 @@ canvas{
     height: 15vh;
     width: 15vh;
     font-size: 4vh;
-    color: #29292b;
-    transition: var(--transition);
+    color: rgba(41,41,43, 0.5);
     position: relative;
 }
 
