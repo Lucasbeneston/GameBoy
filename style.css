@@ -124,7 +124,22 @@ background-color: #f1d631;
 border-radius: 2vh;
 box-shadow: 1vh 1vh 0.5vh 0vh rgba(0,0,0,0.25);
 transition: var(--transition);
+position: relative;
 }
+
+/** Régler le problème d'ombrages entre #yellow-case VS #border-bottom-case **/
+/* Ajouter #border-bottom-case dans le JavaScript pour changer sa couleur aussi */
+/* #border-bottom-case{
+    height: 3vh;
+    width: 48vh;
+    background-color: #f1d631;
+    border-radius: 50%;
+    position: absolute;
+    left: 1vh;
+    bottom: 0;
+    margin-bottom: -1.1vh;
+    box-shadow: 1vh 1vh 0.5vh 0vh rgba(0,0,0,0.25);
+} */
 
 /****  SCREEN SECTION ****/
 #screen-section{
@@ -385,6 +400,8 @@ canvas{
     left: 1.5vh;
     display: none;
     transition: var(--transition);
+    z-index: 99;
+    transform: rotate(5deg);
 }
 
 #togepi-image{
@@ -394,13 +411,15 @@ canvas{
     right: 1.5vh;
     display: none;
     transition: var(--transition);
+    z-index: 99;
+    transform: rotate(-5deg);
 }
 
 #rondoudou-image{
     height: 10vh;
     position: absolute;
     bottom: 4vh;
-    right: 0vh;
+    right: 0.25vh;
     display: none;
     transition: var(--transition);
 }
