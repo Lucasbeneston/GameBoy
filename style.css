@@ -74,11 +74,11 @@ body{
 }
 
 #button-purple{
-    background-color: #6330a7;
+    background-color: #622ea7;
 }
 
 #button-blue{
-    background-color: #147d93;
+    background-color: #14869c;
 }
 
 #button-pokemon{
@@ -99,7 +99,7 @@ body{
     height: 5vh;
     width: 10vh;
     padding: 1vh 2vh;
-    border-radius: 2vh;
+    border-radius: 5vh;
     outline: none;
     cursor: pointer;
     border: 3px solid rgb(0, 0, 0);
@@ -127,8 +127,29 @@ transition: var(--transition);
 position: relative;
 }
 
-/** Régler le problème d'ombrages entre #yellow-case VS #border-bottom-case **/
-/* Ajouter #border-bottom-case dans le JavaScript pour changer sa couleur aussi */
+#comm-section{
+    height: 2.3vh;
+    position: absolute;
+    left: 10vh;
+    text-transform: uppercase;
+    font-size: 1.5vh;
+    display: flex;
+    align-items: center;
+    color: #d6b520;
+    transition: var(--transition);
+}
+
+#comm-section p{
+    padding-left: 1vh;
+}
+
+#triangle-top-comm-section{
+    border-right : 0.65vh solid transparent;
+    border-bottom : 1.3vh solid #d6b520;
+    border-left : 0.65vh solid transparent;
+    transition: var(--transition);
+}
+
 #border-bottom-case{
     height: 3vh;
     width: 48vh;
@@ -137,7 +158,7 @@ position: relative;
     position: absolute;
     left: 1vh;
     bottom: 0;
-    margin-bottom: -1.1vh;
+    margin-bottom: -1vh;
     box-shadow: 1vh 1vh 0.5vh 0vh grey;
     transition: var(--transition);
 }
@@ -167,6 +188,7 @@ position: relative;
     position: absolute;
     bottom: 0;
     margin-bottom: -1vh;
+    z-index: 99;
 }
 
 #power-container{
@@ -186,6 +208,51 @@ position: relative;
     background-color: #440000;
     margin: 1vh 0;
     transition: var(--transition);
+    position: relative;
+    z-index: 101;
+}
+
+/* Croissants power left */
+.rond-1{
+    left: 1.5vh;
+    top: 9.76vh;
+}
+
+.rond-2{
+    left: 2.5vh;
+    top: 9.76vh;
+}
+
+.rond-3{
+    left: 3.5vh;
+    top: 9.76vh;
+}
+
+.demi-cercle{
+    height: 2vh;
+    width: 2.4vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    position: absolute;
+}
+
+.rond-visible{
+    height: 1.2vh;
+    width: 1.2vh;
+    border-radius: 0.75vh;
+    background-color: #3e4957;
+    position: absolute;
+    right: 0;
+}
+
+.rond-invisible{
+    height: 2vh;
+    width: 2vh;
+    border-radius: 1vh;
+    background-color: #222632;
+    position: absolute;
+    left: 0;
 }
 
 #title-gameboy{
@@ -221,7 +288,6 @@ canvas{
     transition: var(--transition);
 }
 
-
 /****  BUTTON SECTION ****/
 #button-section{
     display: flex;
@@ -232,9 +298,43 @@ canvas{
     position: relative;
 }
 
+/* CASE RELIEF */
+#case-relief-top{
+    left: 8vh;
+    height: 2.5vh;
+    width: 35vh;
+    position: absolute; 
+    background-color: #f7dc33;
+    transition: var(--transition);
+}
+
+#case-relief{
+    margin-top: -3vh;
+    height: 38vh;
+    width: 35vh;
+    border-radius: 0vh 0vh 2vh 2vh;
+    position: absolute; 
+    background-color: #f7dc33;
+    transition: var(--transition);
+}
+
+#case-relief-bottom{
+    bottom: 9vh;
+    height: 3vh;
+    width: 33vh;
+    border-radius: 50%;
+    position: absolute;
+    background-color: #f7dc33;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.075);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.075);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.075);
+    transition: var(--transition);
+}
+
 #nintendo{
     width: 15vh;
     font-size: 1.5vh;
+    z-index: 100;
 }
 
 #nintendo h2{
@@ -249,11 +349,12 @@ canvas{
 /*** ARROWS BUTTON ***/
 #button-container{
     display: flex;
-    padding: 0 5vh;
+    padding: 0 3vh;
     justify-content: space-between;
     width: 50vh;
     height: 15vh;
-    margin-bottom: 9vh ;
+    margin-bottom: 7vh ;
+    z-index: 100;
 }
 
 #button-arrows{
@@ -262,7 +363,6 @@ canvas{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-
 }
 
 .arrows{
@@ -391,7 +491,7 @@ canvas{
 #pokemon-logo{
     height: 7.5vh;
     position: absolute;
-    bottom: 13.5vh;
+    bottom: 16vh;
     display: none;
     transition: var(--transition);
 }
@@ -403,7 +503,7 @@ canvas{
     left: 1.5vh;
     display: none;
     transition: var(--transition);
-    z-index: 99;
+    z-index: 100;
     transform: rotate(7deg);
 }
 
@@ -414,7 +514,7 @@ canvas{
     right: 0.5vh;
     display: none;
     transition: var(--transition);
-    z-index: 99;
+    z-index: 100;
     transform: rotate(-7deg);
 }
 
@@ -434,6 +534,7 @@ canvas{
     left: 0.80vh;
     display: none;
     transition: var(--transition);
+    z-index: 100;
 }
 
 
@@ -445,9 +546,15 @@ canvas{
     color: #d6b520;
     font-size: 1.5vh;
     transition: var(--transition);
-    margin-bottom: 6vh ;
+    margin-bottom: 9vh;
     text-transform: uppercase;
+    z-index: 100;
 }
+
+#button-select-start-section h3{
+    font-weight: 500;
+}
+
 .button-select-start-container{
     height: 5vh;
     width: 7.5vh;
@@ -459,13 +566,14 @@ canvas{
 .button-select-start{
     height: 1.5vh;
     width: 5vh;
-    border-radius: 1vh;
+    border-radius: 42%;
     background-color: #383c4c;
     box-shadow: 0vh 0vh 0.2vh 0.3vh rgba(0,0,0,0.90);
     margin-bottom: 1vh;
     cursor: pointer;
     transition: var(--transition);
 }
+
 
 /* SECTION CSS > JS */
 /* Add class .press if you press in your keyboard the good button */
