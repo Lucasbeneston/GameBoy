@@ -1,4 +1,9 @@
-// POUR CHANGER LA GAMEBOY CASE
+        // Créer un localStorage
+        //localStorage['key'] = value;
+        // localStorage.setItem('key', value);
+        // localStorage.getItem('key');
+
+        // POUR CHANGER LA GAMEBOY CASE
         // Cibler la boite de la game boy + Nintendo + start / select
         let gameboyCase = document.getElementById('yellow-case');
         let nintendo = document.querySelector('#nintendo h2');
@@ -95,6 +100,7 @@
             for(let i = 0; i < arrows.length; i++){
                 arrows[i].style.backgroundColor = "#2662de";
             }
+            // A faire : Supprimer l'ancienne class + Créer une nouvelle a ajouter
         };
 
         // Rest pokemonElements

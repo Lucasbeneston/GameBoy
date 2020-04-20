@@ -114,6 +114,16 @@ body{
     font-size: 12px;
 }
 
+#border-bottom{
+    height: 2.5vh;
+    width: 40.5vh;
+    background-color: #222632;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: -1vh;
+}
+
 
 /************* GAME BOY COLOR SECTION *************/
 /***** YELLOW CASE SECTION *****/
