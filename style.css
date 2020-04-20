@@ -54,7 +54,7 @@ body{
 .color-button{
     height: 4vh;
     width: 4vh;
-    border-radius: 25px;
+    border-radius: 2.5vh;
     margin: 1vh;
     border: 2px solid white;
     outline: none;
@@ -99,7 +99,7 @@ body{
     height: 5vh;
     width: 10vh;
     padding: 1vh 2vh;
-    border-radius: 20px;
+    border-radius: 2vh;
     outline: none;
     cursor: pointer;
     border: 3px solid rgb(0, 0, 0);
@@ -114,16 +114,6 @@ body{
     font-size: 12px;
 }
 
-#border-bottom{
-    height: 2.5vh;
-    width: 40.5vh;
-    background-color: #222632;
-    border-radius: 50%;
-    position: absolute;
-    bottom: 0;
-    margin-bottom: -1vh;
-}
-
 
 /************* GAME BOY COLOR SECTION *************/
 /***** YELLOW CASE SECTION *****/
@@ -131,8 +121,8 @@ body{
 height: 90vh;
 width: 50vh;
 background-color: #f1d631;
-border-radius: 20px;
-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.25);
+border-radius: 2vh;
+box-shadow: 1vh 1vh 0.5vh 0vh rgba(0,0,0,0.25);
 transition: var(--transition);
 }
 
@@ -146,11 +136,21 @@ transition: var(--transition);
     background-color:#222632;
     height: 40vh;
     padding-top: 4vh;;
-    border-radius: 20px;
+    border-radius: 3vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
+}
+
+#border-bottom-screen{
+    height: 2.5vh;
+    width: 40.5vh;
+    background-color: #222632;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: -1vh;
 }
 
 #power-container{
@@ -166,7 +166,7 @@ transition: var(--transition);
 #red-led{
     height: 1.5vh;
     width: 1.5vh;
-    border-radius: 20px;
+    border-radius: 2vh;
     background-color: #440000;
     margin: 1vh 0;
     transition: var(--transition);
@@ -224,7 +224,7 @@ canvas{
     text-align: center;
     color: #d6b520;
     border: 3px solid #d6b520;
-    border-radius: 20px;
+    border-radius: 2vh;
     transition: var(--transition);
 }
 
@@ -266,8 +266,8 @@ canvas{
 #arrows-top{
     grid-row: 1/2;
     grid-column: 2/3;
-    border-radius: 7.5px 7.5px 0px 0px;
-    box-shadow: 4px -2px 2px 0px rgba(0,0,0,0.90);
+    border-radius: 0.75vh 0.75vh 0vh 0vh;
+    box-shadow: 0.4vh -0.2vh 0.2vh 0vh rgba(0,0,0,0.90);
     z-index: 98;
 }
 
@@ -280,8 +280,8 @@ canvas{
 #arrows-left{
     grid-row: 2/3;
     grid-column: 1/2;
-    border-radius: 7.5px 0px 0px 7.5px;
-    box-shadow: 4px -7px 2px -3px rgba(0,0,0,0.90);
+    border-radius: 0.75vh 0vh 0vh 0.75vh;
+    box-shadow: 0.4vh -0.7vh 0.2vh -0.3vh rgba(0,0,0,0.90);
 }
 
 #triangle-left{
@@ -300,14 +300,14 @@ canvas{
     height: 3vh;
     width: 3vh;
     background-color: var(--triangle-color);
-    border-radius: 20px;
+    border-radius: 2vh;
 }
 
 #arrows-right{
     grid-row: 2/3;
     grid-column: 3/4;
-    border-radius: 0px 7.5px 7.5px 0px;
-    box-shadow: 0px 0px 2px 4px rgba(0,0,0,0.90);
+    border-radius: 0vh 0.75vh 0.75vh 0vh;
+    box-shadow: 0vh 0vh 0.2vh 0.4vh rgba(0,0,0,0.90);
 }
 
 #triangle-right{
@@ -319,8 +319,8 @@ canvas{
 #arrows-bottom{
     grid-row: 3/4;
     grid-column: 2/3;
-    border-radius: 0px 0px 7.5px 7.5px;
-    box-shadow: 6px -1px 2px -2px rgba(0,0,0,0.90);
+    border-radius: 0vh 0vh 0.75vh 0.75vh;
+    box-shadow: 0.6vh -0.1vh 0.2vh -0.2vh rgba(0,0,0,0.90);
 }
 
 #triangle-bottom{
@@ -345,12 +345,12 @@ canvas{
     height: 6vh;
     width: 6vh;
     background-color: #383c4c;
-    border-radius: 40px;
+    border-radius: 3vh;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 3vh;
-    box-shadow: 0px 0px 2px 3px rgba(0,0,0,0.90);
+    box-shadow: 0px 0px 0.2vh 0.3vh rgba(0,0,0,0.90);
     cursor: pointer;
     transition: var(--transition);
 }
@@ -359,12 +359,12 @@ canvas{
     height: 6vh;
     width: 6vh;
     background-color: #383c4c;
-    border-radius: 30px;
+    border-radius: 3vh;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 6vh;
-    box-shadow: 0px 0px 2px 3px rgba(0,0,0,0.90);
+    box-shadow: 0vh 0vh 0.2vh 0.3vh rgba(0,0,0,0.90);
     cursor: pointer;
     transition: var(--transition);
 }
@@ -437,9 +437,9 @@ canvas{
 .button-select-start{
     height: 1.5vh;
     width: 5vh;
-    border-radius: 10px;
+    border-radius: 1vh;
     background-color: #383c4c;
-    box-shadow: 0px 0px 2px 3px rgba(0,0,0,0.90);
+    box-shadow: 0vh 0vh 0.2vh 0.3vh rgba(0,0,0,0.90);
     margin-bottom: 1vh;
     cursor: pointer;
     transition: var(--transition);
