@@ -3,17 +3,16 @@
         window.getComputedStyle(document.documentElement).getPropertyValue('--case-color');
         window.getComputedStyle(document.documentElement).getPropertyValue('--detail-case-color');
         window.getComputedStyle(document.documentElement).getPropertyValue('--case-relief-color');
-        let pikachu = document.getElementById('pikachu-image');
-        let togepi = document.getElementById('togepi-image');
-        let rondoudou = document.getElementById('rondoudou-image');
-        let pokeball = document.getElementById('pokeball-border');
-        let powerText = document.getElementById('power');
-        let pokemonLogo = document.getElementById('pokemon-logo');
-        let buttonA = document.getElementById('button-A');
-        let buttonB = document.getElementById('button-B');
-        let selectStart = document.getElementsByClassName('button-select-start');
+        window.getComputedStyle(document.documentElement).getPropertyValue('--arrows-color');
+        window.getComputedStyle(document.documentElement).getPropertyValue('--buttonA-color');
+        window.getComputedStyle(document.documentElement).getPropertyValue('--buttonB-color');
+        let imagesPokemon = document.querySelectorAll('.images-pokemon');
         let arrows = document.getElementsByClassName('arrows');
+        let powerText = document.getElementById('power');
         let triangles = document.querySelector('.triangle-arrows');
+        let selectStart = document.getElementsByClassName('button-select-start');
+        let buttonA = document.querySelector('.button-A');
+        let buttonB = document.querySelector('.button-B');
 
         // Cibler les différents boutons de couleurs
         let yellowButton = document.getElementById('button-yellow');
@@ -76,35 +75,29 @@
             document.documentElement.style.setProperty('--case-color', '#f1d631');
             document.documentElement.style.setProperty('--detail-case-color', '#d6b520');
             document.documentElement.style.setProperty('--case-relief-color', '#f7dc33');
-            pikachu.style.display = "block";
-            togepi.style.display = "block";
-            rondoudou.style.display = "block";
-            pokeball.style.display = "block";
-            powerText.style.margin = "2.5vh 0 0"
-            pokemonLogo.style.display = "block";
-            buttonA.style.backgroundColor = "#e42f36";
-            buttonA.style.color = "#c51c26";
-            buttonB.style.color = "#09895e";
-            buttonB.style.backgroundColor = "#00b488";
-            for(let i = 0; i < arrows.length; i++){
-                arrows[i].style.backgroundColor = "#2662de";
+            document.documentElement.style.setProperty('--arrows-color', '#2662de');
+            document.documentElement.style.setProperty('--buttonA-color', '#e42f36');
+            document.documentElement.style.setProperty('--buttonB-color', '#09895e');
+            powerText.style.margin = "2.5vh 0 0";
+            // buttonA.style.color = "#c51c26";
+            // buttonB.style.color = "#09895e";
+            
+            for(let i = 0; i < imagesPokemon.length; i++){
+                imagesPokemon[i].style.display = "block";
             }
         };
 
         // Rest pokemonElements
         function resetPokemon(){
-            pikachu.style.display = "";
-            togepi.style.display = "";
-            rondoudou.style.display = "";
-            pokeball.style.display = "";
-            powerText.style.margin = ""
-            pokemonLogo.style.display = "";
-            buttonA.style.backgroundColor = "";
-            buttonA.style.color = "";
-            buttonB.style.backgroundColor = "";
-            buttonB.style.color = "";
-            for(let i = 0; i < arrows.length; i++){
-                arrows[i].style.backgroundColor = "";
+            document.documentElement.style.setProperty('--arrows-color', '');
+            document.documentElement.style.setProperty('--buttonA-color', '');
+            document.documentElement.style.setProperty('--buttonB-color', '');
+            powerText.style.margin = "";
+            // buttonA.style.color = "";
+            // buttonB.style.color = "";
+
+            for(let i = 0; i < imagesPokemon.length; i++){
+                imagesPokemon[i].style.display = "";
             }
         }
 
@@ -116,6 +109,7 @@
         let startAudio = document.getElementById('start-audio');
         let canvas = document.getElementById('screen');
         let context = canvas.getContext('2d');
+
         // Créer un gradient de couleur dans le canvas
         let linearGradient = context.createLinearGradient(60, 80, 240, 60);
         linearGradient.addColorStop(0, '#364375');
@@ -164,9 +158,7 @@
             function keyDown(e) {
                 for(var i = 0; i < arrows.length ; i++){
                     if(e.keyCode == arrows[i].dataset.key){
-                        // Affiche un message "Your pressed : " + le code de la touche
                         touches.innerHTML = '<h4>Keycode keyboard : ' + e.keyCode + '</h4>';
-                        // Ajoute la class "playing"
                         arrows[i].classList.add('press');
                     } 
                 }
@@ -178,15 +170,13 @@
                     } 
                 }
 
-                // A optimiser : Passe a une class + boucle for + add('press')
                 if (e.keyCode == buttonA.dataset.key){
                     touches.innerHTML = '<h4>Keycode keyboard : ' + e.keyCode + '</h4>';
-                    buttonA.style.backgroundColor = '#f3ef07';
+                    buttonA.classList.add('press');
                 }
-                // A optimiser : Passe a une class + boucle for + add('press')
                 if (e.keyCode == buttonB.dataset.key){
                     touches.innerHTML = '<h4>Keycode keyboard : ' + e.keyCode + '</h4>';
-                    buttonB.style.backgroundColor = '#f3ef07';
+                    buttonB.classList.add('press');
                 }
             };
 
@@ -205,11 +195,10 @@
                 } 
             }
 
-                // A optimiser : remove('press')
                 if (e.keyCode == buttonA.dataset.key){
-                    buttonA.style.backgroundColor = '';
+                    buttonA.classList.remove('press');
                 }
                 if (e.keyCode == buttonB.dataset.key){
-                    buttonB.style.backgroundColor = '';
+                    buttonB.classList.remove('press');
                 }
         };

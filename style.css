@@ -10,6 +10,9 @@
     --case-color: #f1d631;
     --detail-case-color: #d6b520;
     --case-relief-color: #f7dc33;
+    --arrows-color: #383c4c;
+    --buttonA-color: #383c4c;
+    --buttonB-color: #383c4c;
 }
 
 body{
@@ -373,7 +376,7 @@ canvas{
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    background-color: #383c4c;
+    background-color: var(--arrows-color);
     transition: var(--transition);
 }
 
@@ -462,10 +465,10 @@ canvas{
     position: relative;
 }
 
-#button-A{
+.button-A{
     height: 6vh;
     width: 6vh;
-    background-color: #383c4c;
+    background-color: var(--buttonA-color);
     border-radius: 3vh;
     display: flex;
     justify-content: center;
@@ -476,10 +479,10 @@ canvas{
     transition: var(--transition);
 }
 
-#button-B{
+.button-B{
     height: 6vh;
     width: 6vh;
-    background-color: #383c4c;
+    background-color: var(--buttonB-color);
     border-radius: 3vh;
     display: flex;
     justify-content: center;
@@ -493,51 +496,40 @@ canvas{
 /**** POKEMON VERSION ****/
 #pokemon-logo{
     height: 7.5vh;
-    position: absolute;
     bottom: 16vh;
-    display: none;
-    transition: var(--transition);
 }
 
 #pikachu-image{
     height: 9vh;
-    position: absolute;
     bottom: 0;
     left: 1.5vh;
-    display: none;
-    transition: var(--transition);
-    z-index: 100;
     transform: rotate(7deg);
 }
 
 #togepi-image{
     height: 6vh;
-    position: absolute;
     bottom: 0;
     right: 0.5vh;
-    display: none;
-    transition: var(--transition);
-    z-index: 100;
     transform: rotate(-7deg);
 }
 
 #rondoudou-image{
     height: 10vh;
-    position: absolute;
     bottom: 4vh;
     right: 0.25vh;
-    display: none;
-    transition: var(--transition);
 }
 
 #pokeball-border{
     height: 5vh;
-    position: absolute;
     top: 8.34vh;
     left: 0.80vh;
+}
+
+.images-pokemon{
     display: none;
     transition: var(--transition);
     z-index: 100;
+    position: absolute;
 }
 
 
