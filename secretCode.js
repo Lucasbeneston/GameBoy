@@ -43,14 +43,29 @@
           };
           
           function activateCheats() {
-            switchOnOff()
-                context.clearRect(0, 0, canvas.width, canvas.height);
+            if(active == true){
+              context.clearRect(0, 0, canvas.width, canvas.height);
+              redLed.style.backgroundColor = "red";
+              onOffButton.innerHTML = "OFF";
+              canvas.style.backgroundColor = "#c6ccb2";
                 // Premier texte : SIMPLON.CO
                 context.font = "bold 35px Roboto, Arial, serif";
                 context.fillStyle = linearGradient;
-                context.fillText('SIMPLON.CO', 40, 80);
+                context.fillText('SIMPLON.CO', 40, 75);
                 // Deuxième texte : P2 Montrouge®
                 context.font = "bold 15px Roboto, Arial, serif";
                 context.fillStyle = "black";
                 context.fillText('Promo 2 Montrouge®', 75, 110);
+              startAudio.play();
+              active = false;
+          } else {
+              redLed.style.backgroundColor = "";
+              canvas.style.backgroundColor = "";
+              onOffButton.innerHTML = "ON";
+              // Permet d'effacer le contenu de Canvas de la largeur à la hauteur du canvas
+              context.clearRect(0, 0, canvas.width, canvas.height);
+              active = true;
+              activateCheats()
+          }
           };
+          
