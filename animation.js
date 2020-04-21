@@ -146,32 +146,25 @@
 
 
         // ACTIVER LES TOUCHES DE LA GAME BOY + TOUCHES DU CLAVIER
-        // Créer une span vide pour afficher "You pressed :"
-        let touches = document.getElementById('touches');
-
         // Ajouter un évenement d'écoute "keydown" pour les touches du clavier
         window.addEventListener('keydown', keyDown);
             function keyDown(e) {
                 for(var i = 0; i < arrows.length ; i++){
                     if(e.keyCode == arrows[i].dataset.key){
-                        touches.innerHTML = '<h4>Keycode keyboard : ' + e.keyCode + '</h4>';
                         arrows[i].classList.add('press');
                     } 
                 }
 
                 for(var i = 0; i < selectStart.length ; i++){
                     if(e.keyCode == selectStart[i].dataset.key){
-                        touches.innerHTML = '<h4>Keycode keyboard : ' + e.keyCode + '</h4>';
                         selectStart[i].classList.add('press');
                     } 
                 }
 
                 if (e.keyCode == buttonA.dataset.key){
-                    touches.innerHTML = '<h4>Keycode keyboard : ' + e.keyCode + '</h4>';
                     buttonA.classList.add('press');
                 }
                 if (e.keyCode == buttonB.dataset.key){
-                    touches.innerHTML = '<h4>Keycode keyboard : ' + e.keyCode + '</h4>';
                     buttonB.classList.add('press');
                 }
             };
