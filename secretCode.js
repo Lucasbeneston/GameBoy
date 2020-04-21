@@ -55,6 +55,7 @@
               // crée un nouvel élément div + lui ajouter la class "color-button-containers"
               var newDiv = document.createElement('div');
               newDiv.setAttribute("class","color-button-containers");
+              console.log(newDiv);
 
               // Créer un bouton / Lui ajouter la class "color-button"
               var newButton = document.createElement('button');
@@ -68,8 +69,8 @@
               var newH3 = document.createElement('h3');
               var h3Content = document.createTextNode('Simplon edition (2020)');
               newH3.appendChild(h3Content);
+              newDiv.appendChild(newH3);
               console.log(newH3);
-              console.log(h3Content);
 
               // ajoute le nouvel élément créé et son contenu dans le DOM
               var changeColorSection = document.querySelector('#gameboy-change-color');
