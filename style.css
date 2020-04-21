@@ -26,12 +26,6 @@ body{
 }
 
 /************* MAIN CONTENT SECTION *************/
-#main-content-section h1, h2, h3, p{
-    font-family: "helvetica neue", helvetica, arial, sans-serif;
-    letter-spacing: 1px;
-    color: #303030;
-    font-weight: 300;
-}
 
 #main-section{
     padding: 5vh 0;
@@ -39,6 +33,10 @@ body{
 
 #main-header-section h1{
     font-size: 35px;
+    font-family: "helvetica neue", helvetica, arial, sans-serif;
+    letter-spacing: 1px;
+    color: #303030;
+    font-weight: 300;
 }
 
 h1 span{
@@ -49,15 +47,27 @@ h1 span{
 #main-header-section p{
     font-size: 10px;
     font-style: italic;
+    font-family: "helvetica neue", helvetica, arial, sans-serif;
+    letter-spacing: 1px;
+    color: #303030;
+    font-weight: 300;
 }
 
 #main-section h2{
     font-size: 20px;
     padding: 2.5vh 0;
+    font-family: "helvetica neue", helvetica, arial, sans-serif;
+    letter-spacing: 1px;
+    color: #303030;
+    font-weight: 300;
 }
 
 #main-section h3{
     font-size: 15px;
+    font-family: "helvetica neue", helvetica, arial, sans-serif;
+    letter-spacing: 1px;
+    color: #303030;
+    font-weight: 300;
 }
 
 /***** GAME BOY COLOR CHANGE SECTION *****/
@@ -137,13 +147,14 @@ h1 span{
 /************* GAME BOY COLOR SECTION *************/
 /***** YELLOW CASE SECTION *****/
 #yellow-case{
-height: 88vh;
-width: 50vh;
-background-color: var(--case-color);
-border-radius: 2vh;
-box-shadow: 1vh 1vh 0.5vh 0vh grey;
-transition: var(--transition);
-position: relative;
+    height: 88vh;
+    width: 50vh;
+    background-color: var(--case-color);
+    border-radius: 2vh;
+    box-shadow: 1vh 1vh 0.5vh 0vh grey;
+    transition: var(--transition);
+    position: relative;
+    font-family: 'Gill Sans';
 }
 
 #comm-section{
@@ -354,6 +365,7 @@ canvas{
     width: 15vh;
     font-size: 1.5vh;
     z-index: 100;
+    
 }
 
 #nintendo h2{
@@ -363,6 +375,7 @@ canvas{
     border: 3px solid var(--detail-case-color);
     border-radius: 2vh;
     transition: var(--transition);
+    font-weight: 500;
 }
 
 /*** ARROWS BUTTON ***/
