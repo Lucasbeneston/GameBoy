@@ -44,6 +44,11 @@
           
           function activateCheats() {
             if(active == true){
+              document.documentElement.style.setProperty('--case-color', 'rgb(235, 0, 0)');
+              document.documentElement.style.setProperty('--detail-case-color', 'white');
+              document.documentElement.style.setProperty('--case-relief-color', 'red');
+              resetPokemon();
+
               context.clearRect(0, 0, canvas.width, canvas.height);
               redLed.style.backgroundColor = "red";
               onOffButton.innerHTML = "OFF";
