@@ -51,7 +51,9 @@
           }
 
           // Créer un nouveau boutton pour l'edition secrete Simplon
+          let activeSimplon = 0;
           function addButtonSimplon(){
+            if (activeSimplon == 1){
               // crée un nouvel élément div + lui ajouter la class "color-button-containers"
               var newDiv = document.createElement('div');
               newDiv.setAttribute("class","color-button-containers");
@@ -75,10 +77,12 @@
               // ajoute le nouvel élément créé et son contenu dans le DOM
               var changeColorSection = document.querySelector('#gameboy-change-color');
               changeColorSection.append(newDiv);
+            }
           }
 
           function activateCheats() {
             if(active == true){
+              activeSimplon++;
               addButtonSimplon();
               changeToSimplon();
               context.clearRect(0, 0, canvas.width, canvas.height);
@@ -102,7 +106,6 @@
               // Permet d'effacer le contenu de Canvas de la largeur à la hauteur du canvas
               context.clearRect(0, 0, canvas.width, canvas.height);
               active = true;
-              activateCheats()
-          }
+              activateCheats()          }
           };
           
