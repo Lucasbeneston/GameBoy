@@ -103,7 +103,6 @@
         let onOffButton = document.getElementById('on-off-button');
         let redLed = document.getElementById('red-led');
         let startAudio = document.getElementById('start-audio');
-            console.log(startAudio);
         let canvas = document.getElementById('screen');
         let context = canvas.getContext('2d');
 

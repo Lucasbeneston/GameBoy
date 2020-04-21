@@ -6,13 +6,15 @@
 
 :root{
     --triangle-color: rgba(41,41,43, 0.35);
-    --transition: 0.5s;
+    --transition: background-color 0.5s, color 0.5s, border 0.5s;
     --case-color: #f1d631;
     --detail-case-color: #d6b520;
     --case-relief-color: #f7dc33;
     --arrows-color: #383c4c;
     --buttonA-color: #383c4c;
     --buttonB-color: #383c4c;
+    --speaker-color: #313131;
+    --speaker-color-2: rgba(41,41,43, 0.35);
 }
 
 body{
@@ -568,6 +570,32 @@ canvas{
     transition: var(--transition);
 }
 
+/***** SPEAKER SECTION *****/
+/* Inspired by bchanx */
+#speaker-holes {
+    bottom: 4.5vh;
+    right: 12.5vh;
+    background-color: var(--speaker-color);
+    width: 0.60vh;
+    height: 0.60vh;
+    position: absolute;
+    z-index: 100;
+    border-radius: 50%; 
+    box-shadow: 1.4vh 1.2vh var(--speaker-color), 2.8vh 2.35vh var(--speaker-color), 0vh -2.79vh var(--speaker-color), 1.39vh -1.6vh var(--speaker-color), 2.79vh -0.4vh var(--speaker-color), 4.18vh 0.7vh var(--speaker-color), 5.6vh 1.9vh var(--speaker-color) , 0vh -5.6vh var(--speaker-color) , 1.4vh -4.4vh var(--speaker-color) , 2.8vh -3.2vh var(--speaker-color), 4.2vh -2.05vh var(--speaker-color), 5.6vh -0.9vh var(--speaker-color), 7vh 0.3vh var(--speaker-color), 8.4vh 1.5vh var(--speaker-color), 1.4vh -7.2vh var(--speaker-color), 2.8vh -6vh var(--speaker-color), 4.2vh -4.8vh var(--speaker-color), 5.6vh -3.7vh var(--speaker-color), 7vh -2.5vh var(--speaker-color), 8.4vh -1.3vh var(--speaker-color), 9.8vh -0.15vh var(--speaker-color), 4.1vh -7.6vh var(--speaker-color), 5.5vh -6.3vh var(--speaker-color), 6.9vh -5.2vh var(--speaker-color), 8.3vh -4.1vh var(--speaker-color), 9.7vh -2.9vh var(--speaker-color), 6.9vh -8.2vh var(--speaker-color), 8.3vh -7vh var(--speaker-color), 9.7vh -5.9vh var(--speaker-color);
+}
+
+#speaker-holes-2 {
+    bottom: 3vh;
+    right: 12.5vh;
+    background-color: var(--speaker-color-2);
+    width: 0.60vh;
+    height: 0.60vh;
+    position: absolute;
+    z-index: 100;
+    border-radius: 50%; 
+    box-shadow: 1.4vh 1.2vh var(--speaker-color-2), 2.8vh -8.85vh var(--speaker-color-2), 0vh -2.79vh var(--speaker-color-2), 1.39vh -1.6vh var(--speaker-color-2), 2.79vh -0.4vh var(--speaker-color-2), 4.18vh 0.7vh var(--speaker-color-2), 5.6vh -9.3vh var(--speaker-color-2), 0vh -5.6vh var(--speaker-color-2) , 1.4vh -4.4vh var(--speaker-color-2) , 2.8vh -3.2vh var(--speaker-color-2), 4.2vh -2.05vh var(--speaker-color-2), 5.6vh -0.9vh var(--speaker-color-2), 7vh 0.3vh var(--speaker-color-2), 8.4vh -9.9vh var(--speaker-color-2), 1.4vh -7.2vh var(--speaker-color-2), 2.8vh -6vh var(--speaker-color-2), 4.2vh -4.8vh var(--speaker-color-2), 5.6vh -3.7vh var(--speaker-color-2), 7vh -2.5vh var(--speaker-color-2), 8.4vh -1.3vh var(--speaker-color-2), 9.8vh -0.15vh var(--speaker-color-2), 4.1vh -7.6vh var(--speaker-color-2), 5.5vh -6.3vh var(--speaker-color-2), 6.9vh -5.2vh var(--speaker-color-2), 8.3vh -4.1vh var(--speaker-color-2), 9.7vh -2.9vh var(--speaker-color-2), 6.9vh -8.2vh var(--speaker-color-2), 8.3vh -7vh var(--speaker-color-2), 9.7vh -5.9vh var(--speaker-color-2), 9.7vh -8.8vh var(--speaker-color-2);
+}
+
 
 /* SECTION CSS > JS */
 /* Add class .press if you press in your keyboard the good button */
@@ -623,9 +651,6 @@ canvas{
         display: flex;
         justify-content: center;
         align-items: center;
-    }
-
-    #on-off-section{
         padding: 0vh 1vh;
     }
 
