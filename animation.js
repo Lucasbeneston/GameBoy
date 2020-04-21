@@ -103,6 +103,7 @@
         let onOffButton = document.getElementById('on-off-button');
         let redLed = document.getElementById('red-led');
         let startAudio = document.getElementById('start-audio');
+            console.log(startAudio);
         let canvas = document.getElementById('screen');
         let context = canvas.getContext('2d');
 
@@ -122,7 +123,6 @@
         function switchOnOff(){
             if(active == true){
                 redLed.style.backgroundColor = "red";
-                startAudio.play();
                 onOffButton.innerHTML = "OFF";
                 canvas.style.backgroundColor = "#c6ccb2";
                 // Premier texte : GAME BOY
@@ -133,6 +133,7 @@
                 context.font = "bold 15px Roboto, Arial, serif";
                 context.fillStyle = "black";
                 context.fillText('Nintendo®', 110, 110);
+                startAudio.play();
                 active = false;
             } else {
                 redLed.style.backgroundColor = "";
