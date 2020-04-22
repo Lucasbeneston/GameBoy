@@ -1,11 +1,4 @@
         // POUR CHANGER LA GAMEBOY CASE
-        // Cibler la boite de la game boy + Nintendo + start / select
-        window.getComputedStyle(document.documentElement).getPropertyValue('--case-color');
-        window.getComputedStyle(document.documentElement).getPropertyValue('--detail-case-color');
-        window.getComputedStyle(document.documentElement).getPropertyValue('--case-relief-color');
-        window.getComputedStyle(document.documentElement).getPropertyValue('--arrows-color');
-        window.getComputedStyle(document.documentElement).getPropertyValue('--buttonA-color');
-        window.getComputedStyle(document.documentElement).getPropertyValue('--buttonB-color');
         let imagesPokemon = document.querySelectorAll('.images-pokemon');
         let arrows = document.getElementsByClassName('arrows');
         let powerText = document.getElementById('power');
@@ -22,56 +15,48 @@
         let blueButton = document.getElementById('button-blue');
         let pokemonButton = document.getElementById('button-pokemon');
 
-        // Ajouter des évenements d'écoute
-        yellowButton.addEventListener('click', changeToYellow);
-        redButton.addEventListener('click', changeToRed);
-        greenButton.addEventListener('click', changeToGreen);
-        purpleButton.addEventListener('click', changeToPurple);
-        blueButton.addEventListener('click', changeToBlue);
-        pokemonButton.addEventListener('click', changeToPokemon);
-
         // Fonction changeToYellow
-        function changeToYellow(){
+        yellowButton.addEventListener('click', function(){
             document.documentElement.style.setProperty('--case-color', '#f1d631');
             document.documentElement.style.setProperty('--detail-case-color', '#d6b520');
             document.documentElement.style.setProperty('--case-relief-color', '#f7dc33');
             resetPokemon();
-        };
+        });
 
         // Fonction changeToRed
-        function changeToRed(){
+        redButton.addEventListener('click', function(){
             document.documentElement.style.setProperty('--case-color', '#ed205b');
             document.documentElement.style.setProperty('--detail-case-color', '#b91846');
             document.documentElement.style.setProperty('--case-relief-color', '#ff2462');
             resetPokemon();
-        };
+        });
 
         // Fonction changeToGreen
-        function changeToGreen(){
+        greenButton.addEventListener('click', function(){
             document.documentElement.style.setProperty('--case-color', '#8dc73d');
             document.documentElement.style.setProperty('--detail-case-color', '#69942e');
             document.documentElement.style.setProperty('--case-relief-color', '#98d443');
             resetPokemon();
-        };
+        });
 
         // Fonction changeToPurple
-        function changeToPurple(){
+        purpleButton.addEventListener('click', function(){
             document.documentElement.style.setProperty('--case-color', '#6330a7');
             document.documentElement.style.setProperty('--detail-case-color', '#4b247e');
             document.documentElement.style.setProperty('--case-relief-color', '#6c32b8');
             resetPokemon();
-        };
+        });
 
         // Fonction changeToBlue
-        function changeToBlue(){
+        blueButton.addEventListener('click', function(){
             document.documentElement.style.setProperty('--case-color', '#147d93');
             document.documentElement.style.setProperty('--detail-case-color', '#0f6070');
             document.documentElement.style.setProperty('--case-relief-color', '#14869c');
             resetPokemon();
-        };
+        });
 
         // Fonction changeToPokemon
-        function changeToPokemon(){
+        pokemonButton.addEventListener('click', function(){
             document.documentElement.style.setProperty('--case-color', '#f1d631');
             document.documentElement.style.setProperty('--detail-case-color', '#d6b520');
             document.documentElement.style.setProperty('--case-relief-color', '#f7dc33');
@@ -83,7 +68,7 @@
             for(let i = 0; i < imagesPokemon.length; i++){
                 imagesPokemon[i].style.display = "block";
             }
-        };
+        });
 
         // Rest pokemonElements
         function resetPokemon(){
@@ -91,7 +76,6 @@
             document.documentElement.style.setProperty('--buttonA-color', '');
             document.documentElement.style.setProperty('--buttonB-color', '');
             powerText.style.margin = "";
-
             for(let i = 0; i < imagesPokemon.length; i++){
                 imagesPokemon[i].style.display = "";
             }
@@ -99,7 +83,6 @@
 
 
         // POUR DÉMARER LA GAME BOY
-        // Cibler le bouton ON / OFF + la led rouge + l'Audio + l'écran 
         let onOffButton = document.getElementById('on-off-button');
         let redLed = document.getElementById('red-led');
         let startAudio = document.getElementById('start-audio');
@@ -146,7 +129,6 @@
 
 
         // ACTIVER LES TOUCHES DE LA GAME BOY + TOUCHES DU CLAVIER
-        // Ajouter un évenement d'écoute "keydown" pour les touches du clavier
         window.addEventListener('keydown', keyDown);
             function keyDown(e) {
                 for(var i = 0; i < arrows.length ; i++){
