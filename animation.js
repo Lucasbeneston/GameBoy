@@ -125,7 +125,7 @@
                 context.clearRect(0, 0, canvas.width, canvas.height);
                 active = true;
             }
-        };
+        }
 
 
         // ACTIVER LES TOUCHES DE LA GAME BOY + TOUCHES DU CLAVIER
@@ -149,7 +149,7 @@
                 if (e.keyCode == buttonB.dataset.key){
                     buttonB.classList.add('press');
                 }
-            };
+            }
 
         // Ajouter un évenement d'écoute "keyup" pour reset la class 'press'
         window.addEventListener('keyup', keyUp);
@@ -172,4 +172,4 @@
                 if (e.keyCode == buttonB.dataset.key){
                     buttonB.classList.remove('press');
                 }
-        };
+        }

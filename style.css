@@ -22,7 +22,7 @@ body{
     justify-content: space-around;
     padding-top: 5vh;
     font-family: sans-serif;
-    background-color: rgb(248, 248, 248);
+    background-color: rgb(245, 245, 245);
 }
 
 /************* MAIN CONTENT SECTION *************/
@@ -298,10 +298,11 @@ h1 span{
     color: #63768e;
     text-transform: uppercase;
     font-style: italic;
-    font-family: 'Gill Sans';
+    font-family: 'Gill Sans', Arial, Helvetica, sans-serif;
     letter-spacing: -1.75px;
     font-weight: 600;
     z-index: 99;
+    box-sizing: border-box;
 }
 
 #title-gameboy img{
@@ -372,7 +373,7 @@ canvas{
     display: block;
     text-align: center;
     color: var(--detail-case-color);
-    border: 3px solid var(--detail-case-color);
+    border: 0.4vh solid var(--detail-case-color);
     border-radius: 2vh;
     transition: var(--transition);
     font-weight: 500;
