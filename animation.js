@@ -16,7 +16,7 @@
         let pokemonButton = document.getElementById('button-pokemon');
 
         // Fonction changeToYellow
-        yellowButton.addEventListener('click', function(){
+        yellowButton.addEventListener('click', () => {
             document.documentElement.style.setProperty('--case-color', '#f1d631');
             document.documentElement.style.setProperty('--detail-case-color', '#d6b520');
             document.documentElement.style.setProperty('--case-relief-color', '#f7dc33');
@@ -24,7 +24,7 @@
         });
 
         // Fonction changeToRed
-        redButton.addEventListener('click', function(){
+        redButton.addEventListener('click', () => {
             document.documentElement.style.setProperty('--case-color', '#ed205b');
             document.documentElement.style.setProperty('--detail-case-color', '#b91846');
             document.documentElement.style.setProperty('--case-relief-color', '#ff2462');
@@ -32,7 +32,7 @@
         });
 
         // Fonction changeToGreen
-        greenButton.addEventListener('click', function(){
+        greenButton.addEventListener('click', () => {
             document.documentElement.style.setProperty('--case-color', '#8dc73d');
             document.documentElement.style.setProperty('--detail-case-color', '#69942e');
             document.documentElement.style.setProperty('--case-relief-color', '#98d443');
@@ -40,7 +40,7 @@
         });
 
         // Fonction changeToPurple
-        purpleButton.addEventListener('click', function(){
+        purpleButton.addEventListener('click', () => {
             document.documentElement.style.setProperty('--case-color', '#6330a7');
             document.documentElement.style.setProperty('--detail-case-color', '#4b247e');
             document.documentElement.style.setProperty('--case-relief-color', '#6c32b8');
@@ -48,7 +48,7 @@
         });
 
         // Fonction changeToBlue
-        blueButton.addEventListener('click', function(){
+        blueButton.addEventListener('click', () => {
             document.documentElement.style.setProperty('--case-color', '#147d93');
             document.documentElement.style.setProperty('--detail-case-color', '#0f6070');
             document.documentElement.style.setProperty('--case-relief-color', '#14869c');
@@ -56,7 +56,7 @@
         });
 
         // Fonction changeToPokemon
-        pokemonButton.addEventListener('click', function(){
+        pokemonButton.addEventListener('click', () => {
             document.documentElement.style.setProperty('--case-color', '#f1d631');
             document.documentElement.style.setProperty('--detail-case-color', '#d6b520');
             document.documentElement.style.setProperty('--case-relief-color', '#f7dc33');
@@ -97,15 +97,13 @@
         linearGradient.addColorStop(0.75, '#b72241');
         linearGradient.addColorStop(1, '#f3f128');
 
-        // Ajouter un évenement d'écoute "click" pour ON/OFF
-        onOffButton.addEventListener('click', switchOnOff);
 
-        // Fonction switchOnOff 
+        // Ajouter un évenement d'écoute "click" pour ON/OFF
         let active = true;
-        function switchOnOff(){
+        onOffButton.addEventListener('click', () => {
             if(active == true){
                 redLed.style.backgroundColor = "red";
-                onOffButton.innerHTML = "OFF";
+                this.innerHTML = "OFF";
                 canvas.style.backgroundColor = "#c6ccb2";
                 // Premier texte : GAME BOY
                 context.font = "bold 40px Roboto, Arial, serif";
@@ -120,40 +118,38 @@
             } else {
                 redLed.style.backgroundColor = "";
                 canvas.style.backgroundColor = "";
-                onOffButton.innerHTML = "ON";
+                this.innerHTML = "ON";
                 // Permet d'effacer le contenu de Canvas de la largeur à la hauteur du canvas
                 context.clearRect(0, 0, canvas.width, canvas.height);
                 active = true;
             }
-        }
+        })
 
 
         // ACTIVER LES TOUCHES DE LA GAME BOY + TOUCHES DU CLAVIER
-        window.addEventListener('keydown', keyDown);
-            function keyDown(e) {
-                for(var i = 0; i < arrows.length ; i++){
-                    if(e.keyCode == arrows[i].dataset.key){
-                        arrows[i].classList.add('press');
-                    } 
-                }
-
-                for(var i = 0; i < selectStart.length ; i++){
-                    if(e.keyCode == selectStart[i].dataset.key){
-                        selectStart[i].classList.add('press');
-                    } 
-                }
-
-                if (e.keyCode == buttonA.dataset.key){
-                    buttonA.classList.add('press');
-                }
-                if (e.keyCode == buttonB.dataset.key){
-                    buttonB.classList.add('press');
-                }
+        window.addEventListener('keydown', (e) => {
+            for(var i = 0; i < arrows.length ; i++){
+                if(e.keyCode == arrows[i].dataset.key){
+                    arrows[i].classList.add('press');
+                } 
             }
 
+            for(var i = 0; i < selectStart.length ; i++){
+                if(e.keyCode == selectStart[i].dataset.key){
+                    selectStart[i].classList.add('press');
+                } 
+            }
+
+            if (e.keyCode == buttonA.dataset.key){
+                buttonA.classList.add('press');
+            }
+            if (e.keyCode == buttonB.dataset.key){
+                buttonB.classList.add('press');
+            }
+        })
+
         // Ajouter un évenement d'écoute "keyup" pour reset la class 'press'
-        window.addEventListener('keyup', keyUp);
-        function keyUp(e){
+        window.addEventListener('keyup', (e) => {
             for(var i = 0; i < arrows.length ; i++){
                 if(e.keyCode == arrows[i].dataset.key){
                     arrows[i].classList.remove('press');
@@ -172,4 +168,4 @@
                 if (e.keyCode == buttonB.dataset.key){
                     buttonB.classList.remove('press');
                 }
-        }
+        })
